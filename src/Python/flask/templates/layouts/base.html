@@ -4,26 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/static/assets/favicon.ico" type="image/x-icon">
-  <link rel="canonical" href="https://appseed.us/adminlte"/>
   
   <title>
-    IRIS Python Apps - {% block title %}{% endblock %} 
+    IRIS Globals GraphDB - {% block title %}{% endblock %} 
   </title> 
 
   {% block stylesheets %}{% endblock stylesheets %}
 
 </head>
 <body class="hold-transition 
-<button onclick="alert('From base: {{ tot }} ')" />
 {% block body_class %}{% endblock body_class %}
 <div class="wrapper">
 
     {% include 'includes/navigation.html' %}
-
-    {% include 'includes/sidebar.html' %}
-
     {% block content %}{% endblock content %}
-
     {% include 'includes/footer.html' %}
 
     <!-- Control Sidebar -->
