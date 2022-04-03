@@ -7,6 +7,7 @@ Application also demonstrates use of python pyvis liabrary to represent graph da
 * View graph data with the help of pyvis python liabrary.
 
 #### Application layout
+![image](https://user-images.githubusercontent.com/18219467/161451823-6c41c55b-beb8-451a-88a3-6fda582712ee.png)
 ![Capture22](https://user-images.githubusercontent.com/18219467/161445122-27d0987d-17a9-4ece-9ed9-68ba3c3ac29b.PNG)
 ![Untitleddd](https://user-images.githubusercontent.com/18219467/161445134-58cb89cf-f128-4a2a-930d-186a212a94c4.png)
 
