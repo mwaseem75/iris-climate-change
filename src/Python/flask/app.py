@@ -1,56 +1,54 @@
 from flask import Flask, render_template
+from pyvis.network import Network
 from irisglobal import IRISGLOBAL
 
 app = Flask(__name__) 
-app.secret_key = "abc222"
+app.secret_key = "**2a*2d2*"
 
 @app.route("/")
 def index():
-    #content = util.get_dashboard_stats()
-    #return render_template('index.html', content = content)
-    #iris.cls("Embedded.Utils").SetNameSpace("USER")
-    #myGref = iris.gref('^a')
-    #myGref[3] = 'Wednesday'
-    #print(myGref)
-    #iris.cls("Embedded.Utils").SetGbl()
-    #return abc
-    #return myGref #"bismiALLAH"
+    irisglobal = IRISGLOBAL()
+    irisglobal.import_g1_nodes_edges()
+    irisglobal.import_g2_nodes_edges()
+    #getting nodes data
+    nodes = irisglobal.get_g1nodes()
+    #getting edges data
+    edges = irisglobal.get_g1edges()
+    pyvis = True
+    return render_template('index.html', nodes = nodes,edges=edges,pyvis=pyvis)    
 
-    # create database connection and IRIS instance
-    #connection = irisnative.createConnection("localhost", 1972, "USER", "superuser", "SYS")
-    #myIris = irisnative.createIris(connection)
+@app.route("/graphdb2")
+def graphdb2():
+    irisglobal = IRISGLOBAL()
 
-    # global
-    #myIris.set("hello","myGlobal")
-    #abc = myIris.get("myGlobal")
-    #irisglobal = IRISGLOBAL()
-    #irisglobal.import_countries_lookup()
-    #def populate_global_for_chart():
-        #myIris.set(0, "^computer", "hardware", "input","keyborad")
-        #myIris.set(0, "^computer", "hardware", "input","usb drive")
-        #myIris.set(0, "^computer", "hardware", "input","mouse")
-        #myIris.set(0, "^computer", "hardware", "input","webcam")
-        #myIris.set(0, "^computer", "hardware", "output","screen")
-        #myIris.set(0, "^computer", "hardware", "output","printer")
-        #myIris.set(0, "^computer", "hardware", "output","soundbox")
-        #myIris.set(0, "^computer", "software", "os")
-        #myIris.set(0, "^computer", "software", "os", "linux")
-        #myIris.set(0, "^computer", "software", "os", "linux", "ubuntu")
-        #myIris.set(0, "^computer", "software", "os", "linux", "alpine")
-        #myIris.set(0, "^computer", "software", "os", "linux", "centOS")
-        #myIris.set(0, "^computer", "software", "os", "linux", "Debian")
-        #myIris.set(0, "^computer", "software", "os", "unix")
-        #myIris.set(0, "^computer", "software", "os", "macOS", "iEverything")
-        #myIris.set(0, "^computer", "software", "os", "windows", "ms office")
-        #myIris.set(0, "^computer", "software", "os", "windows", "ms paint")
-        #myIris.set(0, "^computer", "software", "os", "windows", "a lot games")
+    got_net = Network()
 
-    #populate_global_for_chart()
+    # set the physics layout of the network
+    got_net.barnes_hut()
+    got_data = irisglobal.get_g2data()
 
-    nodes = [{"id": 1, "label": 'MuhammadWaseem', "shape": "dot"},{"id": 2, "label": 'AamirWaseem', "shape": "dot"},{"id": 3, "label": 'UsmanWaseem', "shape": "dot"}]
-    edges = [{"from": 1, "to": 2}, {"from": 2, "to": 3}, {"from": 3, "to": 1}]
+    for e in got_data:
+        dd = e.split("-")
+        src = dd[0]
+        dst = dd[1]
+        w = dd[2]
 
-    return render_template('index.html', nodes = nodes,edges=edges)    
+        got_net.add_node(src, src, title=src)
+        got_net.add_node(dst, dst, title=dst)
+        got_net.add_edge(src, dst, value=w)
+
+    neighbor_map = got_net.get_adj_list()
+
+    # add neighbor data to node hover data
+    for node in got_net.nodes:
+        node['title'] += ' Neighbors:<br>' + '<br>'.join(neighbor_map[node['id']])
+        node['value'] = len(neighbor_map[node['id']])
+
+    for edge in got_net.edges:
+        node['title'] += ' Neighbors:<br>' + '<br>'.join(neighbor_map[node['id']])
+        node['value'] = len(neighbor_map[node['id']])    
+ 
+    return render_template('index.html', nodes = got_net.nodes,edges=got_net.edges)    
 
 if __name__ == '__main__':
      app.run('0.0.0.0', port = "8080", debug=True)

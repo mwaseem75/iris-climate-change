@@ -1,5 +1,61 @@
-{% extends "layouts/base.html" %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block title %} Global Graph DB {% endblock %} 
+    <!-- Bootstrap CSS -->
+    <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet">
 
-{% include 'pyvis.html' %}
+    <title>Global Graph DB</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="/" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="/graphdb2" class="nav-link">Graph DB</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="http://localhost:52775/csp/sys/UtilHome.csp" class="nav-link">Management Portal</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="http://localhost:52775/csp/sys/exp/%25CSP.UI.Portal.GlobalList.zen?$NAMESPACE=USER" class="nav-link">IS Globals</a>
+          </li>
+        </ul>
+    
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Messages Dropdown Menu -->
+         
+          <li class="nav-item">
+            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+              <i class="fas fa-th-large"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h3>Global Graph DB - Network</h3>
+    
+    {% if pyvis %}
+    {% include 'pyvis.html' %}
+    {% else %}
+    {% include 'pyvis2.html' %}
+    {% endif %}
+   
+   
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="/static/assets/js/jquery.min.js">  </script>
+    <script src="/static/assets/js/bootstrap.bundle.min.js">  </script>
+
+    
+  </body>
+</html>
