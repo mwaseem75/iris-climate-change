@@ -1,29 +1,17 @@
 ## Summary
-IRIS Dashboard build by using embedded python with the help of [**Python Flask Web Framework**](https://flask.palletsprojects.com/). 
-Application also demonstrates some of the Python functionality like Data Science, Data Plotting, Data Visualization and QR Code generation.
+IRIS Global Graph database (GDB) application uses globals to store graph structures with nodes and edges and represent with the of [**Python Flask Web Framework**](https://flask.palletsprojects.com/). 
+Application also demonstrates use of python pyvis liabrary to represent graph data.
 
 ## Features
-* Responsive bootstrap IRIS Dashboard
-* View dashboard details along with interoperability events log and messages.
-* Python plotting from IRIS
-* Use of [**Jupyter Notebook**](https://jupyter.org/)
-* Introduction to Data Science, Data Plotting and Data Visualization.
-* QR Code generator from python.
-## Application Layout
-#### Dashboard
-![image](https://user-images.githubusercontent.com/18219467/155213244-803fecb4-5c76-4805-9bb0-ca5a11411129.png)
-#### Tables Data
-![image](https://user-images.githubusercontent.com/18219467/155213360-2662ec39-c4ad-487f-819a-8956b56130fc.png)
-#### Plotting with Python matplotlib library
-![image](https://user-images.githubusercontent.com/18219467/155135340-93a791cc-e193-47de-bbf5-645c9968bc7a.png)
-#### Introduction to Data Science by using jupyter Notebook
-![image](https://user-images.githubusercontent.com/18219467/155152427-1eb17fe1-47f5-494a-b18b-287c9b188d45.png)
-#### Dataploting by using python matplotlib Library
-![image](https://user-images.githubusercontent.com/18219467/155152819-f6874b0d-94bd-47fa-b82f-498ebd6c6120.png)
-#### Introduction to Data Visualization by using jupyter Notebook
-![image](https://user-images.githubusercontent.com/18219467/155154309-7b99f442-6240-481f-bee6-4dbd62309c2e.png)
-#### QR Code generation with Python
-![image](https://user-images.githubusercontent.com/18219467/155153417-f8aaea5b-1cfd-4ea8-af4e-f70c8a5ccff8.png)
+* Store graph structure in globals
+* View graph data with the help of pyvis python liabrary.
+
+#### Application layout
+![Capture22](https://user-images.githubusercontent.com/18219467/161445122-27d0987d-17a9-4ece-9ed9-68ba3c3ac29b.PNG)
+![Untitleddd](https://user-images.githubusercontent.com/18219467/161445134-58cb89cf-f128-4a2a-930d-186a212a94c4.png)
+
+#### Data Saved in Global
+![image](https://user-images.githubusercontent.com/18219467/161445197-52344c72-c008-4cb9-93db-e391d063e13b.png)
 
 
 ## Recommendation 
@@ -33,7 +21,7 @@ Application also demonstrates some of the Python functionality like Data Science
 1. Clone/git pull the repo into any local directory
 
 ```
-git clone https://github.com/mwaseem75/iris-python-apps.git
+git clone https://github.com/mwaseem75/iris-globals-graphDB.git
 ```
 
 2. Open a Docker terminal in this directory and run:
@@ -50,7 +38,4 @@ docker-compose up -d
 
 To run the application Navigate to http://localhost:4040 
 
-## Credits
-This application is derived from the below iris-python-examples template by @Guillaume Rongier 
-https://openexchange.intersystems.com/package/iris-python-examples
 
