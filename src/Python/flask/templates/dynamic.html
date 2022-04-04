@@ -46,7 +46,15 @@
         </ul>
       </div>
     </nav>
-    <h3>Global Graph DB - Network</h3>
+    <h3>Dynamically Generate Graph DB - Network</h3>
+    
+    <form action="/dynamic" method="POST" >
+      <label for="shortcode">Enter Number of Nodes to create dynamic graph DB :</label>
+      <input type="number" id="nodes" name="nodes" min="1" max="100" Required>
+      <input type="submit" value="Generate">
+    </form>
+    <br>
+   
     {% if pyvis %}
     {% include 'pyvis.html' %}
     {% else %}

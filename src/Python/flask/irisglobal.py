@@ -1,7 +1,7 @@
 import irisnative
-import datetime
 import csv
-import json
+import names
+import random
 
 
 class IRISGLOBAL():
@@ -50,7 +50,29 @@ class IRISGLOBAL():
                 for row in reader:
                     counter = counter + 1
                     self.iris_native.set(row["Source"]+'-'+row["Target"]+'-'+row["Weight"], "^g2graphdb", counter)
-        
+
+
+    #import_dynamic_nodes_edges
+    def import_dynamic_nodes_edges(self,val):
+        #stablish connection
+        self.get_iris_native()
+        self.iris_native.kill("^g3dynamicnodes")
+        self.iris_native.kill("^g3dynamicedges")
+        number_of_records = int(val)
+        counter = 0
+        #importing nodes by generatign random names
+        for _ in range(number_of_records):
+            counter = counter + 1
+            self.iris_native.set(names.get_last_name(), "^g3dynamicnodes", counter)
+
+        #importing edges by generating random numbers
+        i = 1
+        total = int(val) * int(val)
+        while i < total:
+            i += 1            
+            self.iris_native.set(str(random.randint(1, int(val)))+'-'+str(random.randint(1, int(val))), "^g3dynamicedges", i)
+
+
     #Get nodes data     
     def get_g1nodes(self):
         iris = self.get_iris_native()
@@ -70,6 +92,29 @@ class IRISGLOBAL():
         # Iterate over all nodes forwards
         for level1_subscript, level1_value in leverl1_subscript_iter:
             val = iris.get("^g1edges",level1_subscript)
+            element = {"from": int(val.rpartition('-')[0]), "to": int(val.rpartition('-')[2])} 
+            result.append(element)            
+        return result
+
+    #Get nodes data     
+    def get_g3nodes(self):
+        iris = self.get_iris_native()
+        leverl1_subscript_iter = iris.iterator("^g3dynamicnodes")
+        result = []
+        # Iterate over all nodes forwards
+        for level1_subscript, level1_value in leverl1_subscript_iter:
+            val = iris.get("^g3dynamicnodes",level1_subscript)
+            element = {"id": level1_subscript, "label": val, "shape":"dot"} 
+            result.append(element)            
+        return result
+    #Get edges data 
+    def get_g3edges(self):
+        iris = self.get_iris_native()
+        leverl1_subscript_iter = iris.iterator("^g3dynamicedges")
+        result = []
+        # Iterate over all nodes forwards
+        for level1_subscript, level1_value in leverl1_subscript_iter:
+            val = iris.get("^g3dynamicedges",level1_subscript)
             element = {"from": int(val.rpartition('-')[0]), "to": int(val.rpartition('-')[2])} 
             result.append(element)            
         return result

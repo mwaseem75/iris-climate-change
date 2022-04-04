@@ -1,10 +1,12 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from pyvis.network import Network
 from irisglobal import IRISGLOBAL
+
 
 app = Flask(__name__) 
 app.secret_key = "**2a*2d2*"
 
+#Mian route. (index)
 @app.route("/")
 def index():
     irisglobal = IRISGLOBAL()
@@ -16,6 +18,23 @@ def index():
     edges = irisglobal.get_g1edges()
     pyvis = True
     return render_template('index.html', nodes = nodes,edges=edges,pyvis=pyvis)    
+
+
+@app.route("/dynamic", methods=('GET', 'POST'))
+def dynamic():
+    if request.method == 'POST':
+       val = request.form['nodes']
+       irisglobal = IRISGLOBAL()
+       irisglobal.import_dynamic_nodes_edges(val)
+       #getting nodes data
+       nodes = irisglobal.get_g3nodes()
+       #getting edges data
+       edges = irisglobal.get_g3edges()
+    else:
+       nodes = ''
+       edges = ''
+    
+    return render_template('dynamic.html', nodes = nodes,edges=edges)    
 
 @app.route("/graphdb2")
 def graphdb2():
@@ -51,4 +70,4 @@ def graphdb2():
     return render_template('index.html', nodes = got_net.nodes,edges=got_net.edges)    
 
 if __name__ == '__main__':
-     app.run('0.0.0.0', port = "8080", debug=True)
+      app.run('0.0.0.0', port = "8080", debug=True)
