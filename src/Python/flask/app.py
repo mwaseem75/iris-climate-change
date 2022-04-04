@@ -70,6 +70,6 @@ def graphdb2():
     return render_template('index.html', nodes = got_net.nodes,edges=got_net.edges)    
 
 if __name__ == '__main__':
-      #app.run('0.0.0.0', port = "8080", debug=True)
+      app.run('0.0.0.0', port = "8080", debug=True)
    
         
