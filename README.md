@@ -1,5 +1,5 @@
 ## Summary
-IRIS Global Graph database (GDB) application uses globals to store graph structures with nodes and edges and represent with the of [**Python Flask Web Framework**](https://flask.palletsprojects.com/). 
+IRIS Global Graph database (GDB) application uses globals to store graph structures with nodes and edges and represent with [**Python Flask Web Framework**](https://flask.palletsprojects.com/) and with [**Interactive network visualizations Liabrary**](https://pyvis.readthedocs.io/en/latest/).  
 Application also demonstrates use of python pyvis liabrary to represent graph data.
 
 ## Features
@@ -16,7 +16,7 @@ Application also demonstrates use of python pyvis liabrary to represent graph da
 
 
 ## Recommendation 
- * Read related documentations [Embedded Python Overview](https://docs.intersystems.com/iris20212/csp/docbook/DocBook.UI.Page.cls?KEY=AFL_epython).
+ * Read related documentations [Using Globals](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GGBL).
 
 ## Installation
 1. Clone/git pull the repo into any local directory
