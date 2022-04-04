@@ -1,11 +1,11 @@
 ## Summary
-IRIS Global Graph database (GDB) application uses globals to store graph structures with nodes and edges and represent with [**Python Flask Web Framework**](https://flask.palletsprojects.com/) and with [**Interactive network visualizations Liabrary**](https://pyvis.readthedocs.io/en/latest/).  
+IRIS Global Graph database (GDB) application uses globals to store graph structures with nodes and edges and represent with [**Python Flask Web Framework**](https://flask.palletsprojects.com/) and with [**PYVIS Interactive network visualizations Liabrary**](https://pyvis.readthedocs.io/en/latest/).  
 Application also demonstrates use of python pyvis liabrary to represent graph data.
 
 ## Features
-* Store graph structure in globals
-* View graph data with the help of pyvis python liabrary
-* Dynamically create nodes and edges
+* Multiple Data Structures to Store Graph data in globals
+* View graph data with the help of Python Native SDK and PYVIS liabrary
+* Dynamically Generate Graph DB by providing number of nodes
 
 #### Application layout
 ![image](https://user-images.githubusercontent.com/18219467/161451823-6c41c55b-beb8-451a-88a3-6fda582712ee.png)
@@ -14,15 +14,17 @@ Application also demonstrates use of python pyvis liabrary to represent graph da
 ![image](https://user-images.githubusercontent.com/18219467/161569052-0d7b9512-0c00-434c-a5f3-829b212a1615.png)
 
 
-#### Generate and Retrieve Graph Data
-![image](https://user-images.githubusercontent.com/18219467/161469346-127106af-a5c0-493b-933d-a4055c6a32f7.png)
+#### Dynamically Generate Graph DB by providing number of nodes
+![image](https://user-images.githubusercontent.com/18219467/161622774-231e2ac7-6e6f-4247-a325-156ad7cbdbfb.png)
 
 #### Data Saved in Global
-![image](https://user-images.githubusercontent.com/18219467/161445197-52344c72-c008-4cb9-93db-e391d063e13b.png)
+![image](https://user-images.githubusercontent.com/18219467/161623213-080a4ab5-57c3-4925-9832-fbdbdad27cf2.png)
 
 
 ## Recommendation 
- * Read related documentations [Using Globals](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GGBL).
+ * Read related documentations [Using Globals](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GGBL)
+ * [Introduction to the Native SDK](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=BPYNAT_intro)
+ * [PYVIS Interactive network visualizations Liabrary](https://pyvis.readthedocs.io/en/latest/)
 
 ## Installation
 1. Clone/git pull the repo into any local directory
