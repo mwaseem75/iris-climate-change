@@ -12,7 +12,7 @@ Application also demonstrates use of python pyvis liabrary to represent graph da
 ![Capture22](https://user-images.githubusercontent.com/18219467/161445122-27d0987d-17a9-4ece-9ed9-68ba3c3ac29b.PNG)
 ![Untitleddd](https://user-images.githubusercontent.com/18219467/161445134-58cb89cf-f128-4a2a-930d-186a212a94c4.png)
 
-#### Data Generate and Retrieve Graph Data
+#### Generate and Retrieve Graph Data
 ![image](https://user-images.githubusercontent.com/18219467/161469346-127106af-a5c0-493b-933d-a4055c6a32f7.png)
 
 #### Data Saved in Global
