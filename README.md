@@ -1,5 +1,5 @@
 ## Summary
-IRIS Global Graph database (GDB) application uses [**InterSystems Globals**](https://docs.intersystems.com/iris20212/csp/docbook/Doc.View.cls?KEY=PAGE_globals) to store [**Graph Structure Data**](https://en.wikipedia.org/wiki/Graph_database#:~:text=A%20graph%20database%20is%20a,other%20item%20to%20be%20tracked) and present data with the help of [**Python Flask Web**](https://flask.palletsprojects.com/) Framework and [**PYVIS Interactive network visualizations**](https://pyvis.readthedocs.io/en/latest/) Library  
+IRIS Global Graph database (GDB) application uses [**InterSystems Globals**](https://docs.intersystems.com/iris20212/csp/docbook/Doc.View.cls?KEY=PAGE_globals) to store [**Graph Data**](https://en.wikipedia.org/wiki/Graph_database#:~:text=A%20graph%20database%20is%20a,other%20item%20to%20be%20tracked) and present data with the help of [**Python Flask Web**](https://flask.palletsprojects.com/) Framework and [**PYVIS Interactive network visualizations**](https://pyvis.readthedocs.io/en/latest/) Library  
 
 ## Features
 * Multiple Data Structures to Store Graph data in globals
