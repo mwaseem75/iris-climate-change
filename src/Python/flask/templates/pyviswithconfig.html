@@ -3,10 +3,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
 
-
-<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
-<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
-
 <style type="text/css">
 
         #mynetwork {
@@ -24,15 +20,12 @@
             height: 600px;
         }
         
-
-        
 </style>
 
 </head>
 
 <body>
 <div id = "mynetwork"></div>
-
 
 <div id = "config"></div>
 
@@ -81,7 +74,7 @@
                   }
                 },
                 "font": {
-                  "color": "rgba(15,109,255,1)"
+                  "color": "rgba(255,255,255,1)"
                 }
               },
             "edges": {
@@ -120,20 +113,13 @@
             }
         }
         
-
-        
+       
         // if this network requires displaying the configure window,
         // put it in its div
         options.configure["container"] = document.getElementById("config");
         
-
         network = new vis.Network(container, data, options);
-	 
-        
-
-
-        
-
+	         
         return network;
 
     }

@@ -21,16 +21,16 @@
             <a href="/" class="nav-link">Home</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="/graphdb2" class="nav-link">Graph DB</a>
+            <a href="/graphdb2" class="nav-link">Game of Thrones Network</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
             <a href="/dynamic" class="nav-link">Dynamic GraphDB</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="http://localhost:52775/csp/sys/UtilHome.csp" class="nav-link">Management Portal</a>
+            <a href="http://localhost:52775/csp/sys/exp/%25CSP.UI.Portal.GlobalList.zen?$NAMESPACE=USER" class="nav-link">IS Globals</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="http://localhost:52775/csp/sys/exp/%25CSP.UI.Portal.GlobalList.zen?$NAMESPACE=USER" class="nav-link">IS Globals</a>
+            <a href="http://localhost:52775/csp/sys/UtilHome.csp" class="nav-link">Management Portal</a>
           </li>
         </ul>
     
@@ -46,22 +46,21 @@
         </ul>
       </div>
     </nav>
-    <h3>Dynamically Generate Graph DB - Network</h3>
+    <h3>Dynamically Generate Graph DB by providing number of nodes</h3>
     
     <form action="/dynamic" method="POST" >
       <label for="shortcode">Enter Number of Nodes to create dynamic graph DB :</label>
-      <input type="number" id="nodes" name="nodes" min="2" max="100" Required>
+      <input type="number" id="nodes" name="nodes" min="2" max="500" Required>
       <input type="submit" value="Generate">
     </form>
     <br>
    
     {% if pyvis %}
-    {% include 'pyvis.html' %}
+    {% include 'pyviswithconfig.html' %}
     {% else %}
-    {% include 'pyvis2.html' %}
+    {% include 'pyviswithoutconfig.html' %}
     {% endif %}
-   
-   
+      
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="/static/assets/js/jquery.min.js">  </script>
     <script src="/static/assets/js/bootstrap.bundle.min.js">  </script>

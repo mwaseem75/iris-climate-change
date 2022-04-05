@@ -21,17 +21,18 @@
             <a href="/" class="nav-link">Home</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="/graphdb2" class="nav-link">Graph DB</a>
+            <a href="/graphdb2" class="nav-link">Game of Thrones Network</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
             <a href="/dynamic" class="nav-link">Dynamic GraphDB</a>
           </li>
           <li class="nav-item d-none d-sm-inline-block">
-            <a href="http://localhost:52775/csp/sys/UtilHome.csp" class="nav-link">Management Portal</a>
-          </li>
-          <li class="nav-item d-none d-sm-inline-block">
             <a href="http://localhost:52775/csp/sys/exp/%25CSP.UI.Portal.GlobalList.zen?$NAMESPACE=USER" class="nav-link">IS Globals</a>
           </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="http://localhost:52775/csp/sys/UtilHome.csp" class="nav-link">Management Portal</a>
+          </li>
+        
         </ul>
     
         <!-- Right navbar links -->
@@ -46,14 +47,19 @@
         </ul>
       </div>
     </nav>
-    <h3>Global Graph DB - Network</h3>
+      
     {% if pyvis %}
-    {% include 'pyvis.html' %}
+    <h3>Store and retrieve Graph Nodes and Edges with the help of Python Native SDK and PYVIS liabrary</h3>
+    {% include 'pyviswithconfig.html' %}
     {% else %}
-    {% include 'pyvis2.html' %}
+    <h3>Demonstrate Network Science by using Network Game of Thrones dataset</h3>
+    <h6>The beauty of Pyvis is that each and every component of the network can be focused. For example, zooming in to a dense
+      portion of the network, we can hover over a particular node to get a glimpse of the scenario</h6>
+    <h6>Network diagram show relationships between characters and the frequencies between them,
+    Hover tooltip shows immediate neighbors for each and every node</h6>
+    {% include 'pyviswithoutconfig.html' %}
     {% endif %}
-   
-   
+      
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="/static/assets/js/jquery.min.js">  </script>
     <script src="/static/assets/js/bootstrap.bundle.min.js">  </script>
