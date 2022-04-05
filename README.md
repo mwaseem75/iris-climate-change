@@ -8,16 +8,16 @@ IRIS Global Graph database (GDB) application uses [**InterSystems Globals**](htt
 * Dynamically Generate Graph DB by providing number of nodes
 
 #### Application layout
-![image](https://user-images.githubusercontent.com/18219467/161451823-6c41c55b-beb8-451a-88a3-6fda582712ee.png)
-![Capture22](https://user-images.githubusercontent.com/18219467/161445122-27d0987d-17a9-4ece-9ed9-68ba3c3ac29b.PNG)
-![Untitleddd](https://user-images.githubusercontent.com/18219467/161445134-58cb89cf-f128-4a2a-930d-186a212a94c4.png)
-![image](https://user-images.githubusercontent.com/18219467/161569052-0d7b9512-0c00-434c-a5f3-829b212a1615.png)
+![image](https://user-images.githubusercontent.com/18219467/161662020-b135e968-b51d-469c-976c-df3651420e17.png)
+![image](https://user-images.githubusercontent.com/18219467/161664610-290dd066-07bd-422f-9048-9aa816109cdf.png)
 
 
-#### Dynamically Generate Graph DB by providing number of nodes
-![image](https://user-images.githubusercontent.com/18219467/161622774-231e2ac7-6e6f-4247-a325-156ad7cbdbfb.png)
+![image](https://user-images.githubusercontent.com/18219467/161664483-97916a70-0dd8-4457-b4eb-6a955e8fde31.png)
+![image](https://user-images.githubusercontent.com/18219467/161664316-f335282b-dacc-4449-948b-6a95f8d2efe7.png)
+![image](https://user-images.githubusercontent.com/18219467/161664745-d7ade45c-2ca3-41f5-82da-b5233aa7ebf1.png)
 
-#### Data Saved in Global
+
+![image](https://user-images.githubusercontent.com/18219467/161664930-496cc973-0c80-42eb-9aa4-c520eee72cd7.png)
 ![image](https://user-images.githubusercontent.com/18219467/161623213-080a4ab5-57c3-4925-9832-fbdbdad27cf2.png)
 
 
