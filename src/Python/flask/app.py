@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 from pyvis.network import Network
 from irisglobal import IRISGLOBAL
-
 app = Flask(__name__) 
 app.secret_key = "**2a*2d2*"
 #Mian route. (index)
@@ -18,7 +17,6 @@ def index():
     #To display graph with configuration
     pyvis = True
     return render_template('index.html', nodes = nodes,edges=edges,pyvis=pyvis)    
-
 @app.route("/dynamic", methods=('GET', 'POST'))
 def dynamic():
     if request.method == 'POST':
@@ -34,9 +32,7 @@ def dynamic():
        #Initially show empty graph 
        nodes = ''
        edges = ''
-    
     return render_template('dynamic.html', nodes = nodes,edges=edges)    
-
 @app.route("/graphdb2")
 #Demonstrate Network Science by using Network Game of Thrones dataset
 def graphdb2():
@@ -59,10 +55,6 @@ def graphdb2():
     for node in got_net.nodes:
         node['title'] += ' Neighbors:<br>' + '<br>'.join(neighbor_map[node['id']])
         node['value'] = len(neighbor_map[node['id']])
-
     return render_template('index.html', nodes = got_net.nodes,edges=got_net.edges)    
-
 if __name__ == '__main__':
       app.run('0.0.0.0', port = "8080", debug=True)
-   
-        
