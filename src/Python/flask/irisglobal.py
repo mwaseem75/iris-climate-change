@@ -1,4 +1,3 @@
-"""
 import irisnative
 import csv
 import names
@@ -146,7 +145,7 @@ class IRISGLOBAL():
                     result.append(element)
                 counter=counter+1    
         return result
-"""
+
   
 
     
