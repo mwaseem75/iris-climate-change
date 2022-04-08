@@ -3,7 +3,7 @@ import csv
 import names
 import random
 
-#Main liabrary to import and get data from InterSystems Globals by using Native SDK
+#Main liabrary to import & get data from InterSystems Globals by using Native SDK
 class IRISGLOBAL():
     def __init__(self):
         self.iris_native = None
