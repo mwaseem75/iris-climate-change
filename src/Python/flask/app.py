@@ -4,7 +4,7 @@ from irisglobal import IRISGLOBAL
 
 app = Flask(__name__) 
 app.secret_key = "**2a*2ds2*"
-#Mian route. (index)
+#Mian route.(index)
 @app.route("/")
 def index():
     #Establish connection and import data to globals
