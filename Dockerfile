@@ -1,5 +1,5 @@
 #ARG IMAGE=containers.intersystems.com/intersystems/irishealth-community:2021.2.0.651.0
-ARG IMAGE=intersystemsdc/iris-community:preview
+ARG IMAGE=intersystemsdc/iris-community
 FROM $IMAGE
 
 # For non community version
@@ -35,8 +35,3 @@ ENV IRISPASSWORD "SYS"
 
 # Requirement for embedded python
 RUN pip3 install -r ${SRC_PATH}/src/Python/requirements.txt
-
-# Install Native API
-COPY misc/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl /usr/irissys/dev/python/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl
-RUN pip3 install /usr/irissys/dev/python/irisnative-1.0.0-cp34-abi3-linux_x86_64.whl
-
