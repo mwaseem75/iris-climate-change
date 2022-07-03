@@ -1,5 +1,6 @@
 flask>=2.0.1
 pandas
+plotly
 pyvis
 names
 
