@@ -35,22 +35,22 @@
       </div>
     </nav>
       
-    {% if pyvis %}
-    <h3>Store and retrieve Graph Nodes and Edges with the help of Python Native SDK and PYVIS liabrary</h3>
-    {% include 'pyviswithconfig.html' %}
-    {% else %}
-    <h3>Demonstrate Network Science by using Network Game of Thrones dataset</h3>
-    <h6>The beauty of Pyvis is that each and every component of the network can be focused. For example, zooming in to a dense
-      portion of the network, we can hover over a particular node to get a glimpse of the scenario</h6>
-    <h6>Network diagram show relationships between characters and the frequencies between them,
-    Hover tooltip shows immediate neighbors for each and every node</h6>
-    {% include 'pyviswithoutconfig.html' %}
-    {% endif %}
+    <div>
+      <h1>Plotly.newPlot("myPlot",   fig | safe  )</h1>
+      <div id="myPlot"></div>
+  </div>
       
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="/static/assets/js/jquery.min.js">  </script>
     <script src="/static/assets/js/bootstrap.bundle.min.js">  </script>
 
+    <script>
+         Plotly.newPlot("myPlot", {{ fig | safe }})
+    </script>  
     
   </body>
 </html>
+
+
+

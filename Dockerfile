@@ -1,5 +1,6 @@
 #ARG IMAGE=containers.intersystems.com/intersystems/irishealth-community:2021.2.0.651.0
 ARG IMAGE=intersystemsdc/iris-community
+#ARG IMAGE=intersystemsdc/iris-community:preview
 FROM $IMAGE
 
 # For non community version

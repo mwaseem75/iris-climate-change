@@ -13,7 +13,7 @@
         "internalPort": 52773
       },
       "links": {
-        "IRIS Global Graph DB": "http://localhost:4040",
+        "Climate Change Home": "http://localhost:4040",
         "Management Portal": "http://localhost:52775/csp/sys/UtilHome.csp"
       },
       "active": true,
