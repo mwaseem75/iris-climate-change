@@ -1,5 +1,5 @@
-﻿"Country Code","Country","M49 Code","ISO2 Code","ISO3 Code","Start Year","End Year"
-"2","Afghanistan","004","AF","AFG","",""
+﻿"countrycode","Country","M49 Code","ISO2 Code","ISO3 Code","Start Year","End Year"
+"2","Afghanistan","004","AF","AFG","0","0"
 "5100","Africa","002","","X06","",""
 "284","Åland Islands","248","","ALA","",""
 "3","Albania","008","AL","ALB","",""
