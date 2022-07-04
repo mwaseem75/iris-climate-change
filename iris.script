@@ -3,7 +3,7 @@
     Do ##class(Security.Users).UnExpireUserPasswords("*")
       
     zn "USER" 
-    //zw $SYSTEM.OBJ.ImportDir("/opt/irisapp/src", "*.cls", "cubk", .tErrors, 1)
+    zw $SYSTEM.OBJ.ImportDir("/opt/irisapp/src", "*.cls", "cubk", .tErrors, 1)
     do ##class(dc.utility).ImportDS()
     // Import DS
 
