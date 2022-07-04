@@ -1,7 +1,12 @@
     zn "%SYS" 
     // Allow SuperUser/SYS
     Do ##class(Security.Users).UnExpireUserPasswords("*")
-    // Allow service callin for embbeded python
+      
+    zn "USER" 
+    zw $SYSTEM.OBJ.ImportDir("/opt/irisapp/src", "*.cls", "cubk", .tErrors, 1)
+    do ##class(dc.utility).ImportDS()
+    // Import DS
+
 
    
  
