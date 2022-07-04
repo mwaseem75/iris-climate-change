@@ -25,6 +25,8 @@ USER ${ISC_PACKAGE_MGRUSER}
 COPY . /opt/irisapp
 #COPY  Installer.cls .
 # load demo stuff
+COPY iris.script /opt/irisapp/iris.script
+
 RUN iris start IRIS \
 	&& iris session IRIS < /opt/irisapp/iris.script && iris stop IRIS quietly
 

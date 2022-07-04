@@ -7,7 +7,7 @@ ClassMethod ImportDS() As %String
     //SET qry = "CREATE TABLE dc.ClimateChange.Countries(CountryCode INT,Country VARCHAR(50),M49Code VARCHAR(3),ISO2Code VARCHAR(2),ISO3Code VARCHAR(3),StartYear INT,EndYear INT)"
     
     //Execute Query
-    Do ..GetColTypes("/irisdev/app/src/data/climatechange/FAOSTAT_data_11-24-2020.csv",.coltype)
+    Do ..GetColTypes("/opt/irisapp/src/data/climatechange/FAOSTAT_data_11-24-2020.csv",.coltype)
     SET tableName= "dc.ClimateChange.Countries"
     SET qry = "CREATE TABLE "_tableName_" ("_coltype_")"
     SET rset = ##class(%SQL.Statement).%ExecDirect(,qry)
@@ -19,7 +19,7 @@ ClassMethod ImportDS() As %String
     ELSE
     {
     //Load DATA statement
-        SET qry = "LOAD DATA FROM FILE  '/irisdev/app/src/data/climatechange/FAOSTAT_data_11-24-2020.csv' INTO dc.ClimateChange.Countries USING {""from"":{""file"":{""header"":""0""}}}"
+        SET qry = "LOAD DATA FROM FILE  '/opt/irisapp/src/data/climatechange/FAOSTAT_data_11-24-2020.csv' INTO dc.ClimateChange.Countries USING {""from"":{""file"":{""header"":""0""}}}"
         SET rset = ##class(%SQL.Statement).%ExecDirect(,qry)
         IF rset.%SQLCODE
         {
@@ -27,7 +27,7 @@ ClassMethod ImportDS() As %String
         } 
     }
 
-    Do ..GetColTypes("/irisdev/app/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv",.coltype)
+    Do ..GetColTypes("/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv",.coltype)
     SET tableName= "dc.ClimateChange.Data"
     SET qry = "CREATE TABLE "_tableName_" ("_coltype_")"
     SET rset = ##class(%SQL.Statement).%ExecDirect(,qry)
@@ -35,6 +35,17 @@ ClassMethod ImportDS() As %String
     IF rset.%SQLCODE
     {
          WRITE rset.%Message,!          
+    }
+    ELSE
+    {
+         //Load DATA statement
+        SET qry = "LOAD DATA FROM FILE  '/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv' INTO dc.ClimateChange.Data USING {""from"":{""file"":{""header"":""0""}}}"
+        SET rset = ##class(%SQL.Statement).%ExecDirect(,qry)
+        IF rset.%SQLCODE
+        {
+            
+             WRITE rset.%Message,!  
+        } 
     }
     return ""
 }
