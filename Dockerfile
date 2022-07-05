@@ -37,4 +37,7 @@ ENV IRISUSERNAME "SuperUser"
 ENV IRISPASSWORD "SYS"
 
 # Requirement for embedded python
-RUN pip3 install -r ${SRC_PATH}/src/Python/requirements.txt
+#RUN pip3 install -r ${SRC_PATH}/src/Python/requirements.txt
+RUN pip3 install flask>=2.0.1
+RUN pip3 install pandas
+RUN pip3 install plotly
