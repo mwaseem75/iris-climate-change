@@ -20,155 +20,101 @@
                 </a>
               </li>
 
-        
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    DataSet 
+                    <i class="fas fa-angle-left right"></i>                   
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+
           <li class="nav-item">
-            <a href="/processes" class="nav-link {% if 'processes' in segment %} active {% endif %}">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="/dscountries" class="nav-link {% if 'processes' in segment %} active {% endif %}">
+              <i class="nav-icon far fa-calendar-alt"></i>
               <p>
-                Processes
+                Countries and Territories
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/dsdata" class="nav-link {% if 'messages' in segment %} active {% endif %}">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                World Wide Data
                 
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="/messages" class="nav-link {% if 'messages' in segment %} active {% endif %}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Messages
-                
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/securityusers" class="nav-link {% if 'messages' in segment %} active {% endif %}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Users
-                
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/securityapps" class="nav-link {% if 'messages' in segment %} active {% endif %}">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Applications
-               
-              </p>
-            </a>
-          </li>
+          </ul>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                EVENT LOG
+                Analysis 
                 <i class="fas fa-angle-left right"></i>
-                
+               
               </p>
             </a>
             <ul class="nav nav-treeview">
-               
           <li class="nav-item">
-            <a href="/elassert" class="nav-link">
+            <a href="/globaldata" class="nav-link {% if 'messages' in segment %} active {% endif %}">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
-                Assert
+                World Wide Changes
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/mosttemp" class="nav-link {% if 'messages' in segment %} active {% endif %}">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Top 10 Most Temp
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/leasttemp" class="nav-link {% if 'messages' in segment %} active {% endif %}">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Top 10 Least Temp
+               
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/trendyears" class="nav-link {% if 'messages' in segment %} active {% endif %}">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Trend Between Years
                
               </p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="/elerror" class="nav-link">
+            <a href="/seasons" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
-                Error
+                Seasons Differences
                 
               </p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="/elwarning" class="nav-link">
+            <a href="/trendtemp" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
-                Warning
+                Temprature trend
                 
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="/elinfo" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Info
-               
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/eltrace" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Trace
-               
-              </p>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a href="/elevent" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Alert
-            
-              </p>
-            </a>
-          </li>
-        </ul>
-          <li class="nav-header">PYTHON LIBRARIES</li>
-          <li class="nav-item">
-            <a href="/matplot" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                IRIS Matplotlib               
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">JUPYTER NOTEBOOK</li>
-          <li class="nav-item">
-            <a href="http://localhost:8888/notebooks/IRISPyDataScience.ipynb" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Data Science               
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="http://localhost:8888/notebooks/IRISPyMatplotlib.ipynb" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Data Plotting              
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="http://localhost:8888/notebooks/IRISPyPandas.ipynb" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Data Visualization               
-              </p>
-            </a>
-          </li> 
-          <li class="nav-item">
-            <a href="http://localhost:8888/notebooks/IRISPyQR_Code_Generator.ipynb" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                QR Code               
-              </p>
-            </a>
-          </li>           
-        </ul>
+          </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>

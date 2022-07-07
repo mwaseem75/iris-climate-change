@@ -19,15 +19,31 @@ app.secret_key = "**Sec##*"
 #Mian route.(index)
 @app.route("/")
 def index():
-       
-    #statement = iris.sql.exec("SELECT * FROM ClimateChange.Data")
-    #df = pd.read_csv("/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv", encoding='latin-1') # csv file is encoding as latin-1 type
-    df = "jj"
-        
-    return render_template("index.html", fig=df,my_cols=df) 
+  
+    return render_template("index.html") 
 
-@app.route("/fig1")
-def fig1():
+@app.route("/dscountries")
+def countries():
+    statement = iris.sql.exec("SELECT * FROM ClimateChange.Countries") 
+    df = statement.dataframe()
+    my_data=json.loads(df.to_json(orient="split"))["data"]
+    my_cols=[{"title": str(col)} for col in json.loads(df.to_json(orient="split"))["columns"]]   
+    ftitle = "Processes"
+    fheading = "Countries and Teritories"
+    return render_template('tablesdata.html',  ftitle = ftitle, fheading = fheading, my_data = my_data, my_cols = my_cols)    
+
+@app.route("/dsdata")
+def dsdata():
+    statement = iris.sql.exec("SELECT * FROM ClimateChange.Data") 
+    df = statement.dataframe()
+    my_data=json.loads(df.to_json(orient="split"))["data"]
+    my_cols=[{"title": str(col)} for col in json.loads(df.to_json(orient="split"))["columns"]]   
+    ftitle = "Processes"
+    fheading = "Countries and Teritories"
+    return render_template('tablesdata.html',  ftitle = ftitle, fheading = fheading, my_data = my_data, my_cols = my_cols)    
+
+@app.route("/mosttemp")
+def mosttemp():
     #Get DataFrame
     df = getDataFrame()
         
@@ -81,11 +97,10 @@ def fig1():
     #fig.show()
     #fig.write_html("file.html") 
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    
-    return render_template("index.html", fig=graphJSON) 
+    return render_template("main.html", fig=graphJSON) 
        
-@app.route("/fig2")
-def fig2():
+@app.route("/leasttemp")
+def leasttemp():
     #Get DataFrame
     df = getDataFrame()
         
@@ -138,11 +153,11 @@ def fig2():
 
     #####################################################################
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    return render_template("index.html", fig=graphJSON)
+    return render_template("main.html", fig=graphJSON)
 
 
-@app.route("/fig3")
-def fig3():
+@app.route("/trendyears")
+def trendyears():
     #Get DataFrame
     df = getDataFrame()
         
@@ -212,10 +227,10 @@ def fig3():
     fig.update_yaxes(title='Temperature Change')
 
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    return render_template("index.html", fig=graphJSON)
+    return render_template("main.html", fig=graphJSON)
  
-@app.route("/fig4")
-def fig4():
+@app.route("/seasons")
+def seasons():
     #Get DataFrame
     df = getDataFrame()
         
@@ -285,10 +300,10 @@ def fig4():
     fig.update_yaxes(title='Temperature Change')
 
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    return render_template("index.html", fig=graphJSON)
+    return render_template("main.html", fig=graphJSON)
     
-@app.route("/fig5")
-def fig5():
+@app.route("/trendtemp")
+def trendtemp():
     #Get DataFrame
     df = getDataFrame()
         
@@ -327,10 +342,10 @@ def fig5():
     ))
 
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    return render_template("index.html", fig=graphJSON)
+    return render_template("main.html", fig=graphJSON)
     
-@app.route("/fig6")
-def fig6():
+@app.route("/globaldata")
+def globaldata():
     #Get DataFrame
     df = getDataFrame()
         
@@ -353,7 +368,8 @@ def fig6():
                         labels={'tem_change':'The Temperature Change', '°C':'°C'},
                         category_orders={'°C':['<=-1.5','<=-1.0','<=0.0','<=0.5','<=1.5','>1.5','None']},
                         color_discrete_map={'<=-1.5':"#08519c",'<=-1.0':"#9ecae1",'<=0.0':"#eff3ff",'<=0.5':"#ffffb2",'<=1.5': "#fd8d3c",'>1.5':"#bd0026",'None':"#252525"},
-                        title = 'Temperature Change - 1961 - 2019')
+                        title = 'Temperature Change - 1961 - 2019<br>when examining the top ten areas that have the highest temperature change in the last decade are mostly industrialized countries<br>Additionally, temperature increased every ten decades, and the last decade can count as the hottest decade'                      
+                        )
 
     # adjusting size of map, legend place, and background colour
     fig.update_layout(
@@ -377,7 +393,7 @@ def fig6():
             x=1
     ))
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    return render_template("index.html", fig=graphJSON)
+    return render_template("main.html", fig=graphJSON)
 
 def getDataFrame():
     #statement = iris.sql.exec("SELECT * FROM ClimateChange.Data")

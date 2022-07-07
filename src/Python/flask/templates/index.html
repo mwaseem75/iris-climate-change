@@ -16,7 +16,13 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
-  
+  <style>
+		.bg-info {background-color: #2fa9bd!important}
+		.bg-warning {background-color: #8dbaf3!important}
+		.bg-success {background-color: #3ba954!important}
+		.bg-prac {background-color: #f5d060!important}
+     .bg-ion {color:#1f2d3d!important}
+	</style>
 {% endblock stylesheets %}
 
 {% block content %}
@@ -31,126 +37,127 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">              
-
-                <p>Processes</p>
+                <h3>DataSet <sup style="font-size: 14px"><a href="https://www.fao.org/contact-us/terms/db-terms-of-use/en/" class="small-box-footer"> LICENSE Details</a></sup></h3>
+                <p>The Food and Agriculture Organization (FAO) Climate Change dataset</p>                
               </div>
               <div class="icon">
                 <i class="ion ion-ios-photos"></i>
               </div>
-              <a href="/processes" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="https://www.fao.org/faostat/en/#data/ET" class="small-box-footer">View Dataset Details <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-info">
               <div class="inner">
-                <h3>55 <sup style="font-size: 20px"></sup></h3>
-                <p>Messages</p>
-                <p>This is great message from Messages</p>                
+                <h3>227 <sup style="font-size: 20px"></sup></h3>
+                <p>Countries and Territories (In 2019: 190 countries and 37 other territorial entities.)</p>
+                  
               </div>
               <div class="icon">
-                <i class="ion ion-android-chat"></i>
+                <i class="ion ion-ios-photos"></i>
               </div>
-              <a href="/fig1" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>55 <sup style="font-size: 20px"></sup></h3>
-                <p>Messages</p>
-                <p>This is great message from Messages</p>                
-              </div>
-              <div class="icon">
-                <i class="ion ion-android-chat"></i>
-              </div>
-              <a href="/fig1" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>55 <sup style="font-size: 20px"></sup></h3>
-                <p>Messages</p>
-                <p>This is great message from Messages</p>                
-              </div>
-              <div class="icon">
-                <i class="ion ion-android-chat"></i>
-              </div>
-              <a href="/fig1" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>55 <sup style="font-size: 20px"></sup></h3>
-                <p>Messages</p>
-                <p>This is great message from Messages</p>                
-              </div>
-              <div class="icon">
-                <i class="ion ion-android-chat"></i>
-              </div>
-              <a href="/fig1" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-               
-
-                <p>Security Users</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="/securityusers" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-4 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">           
-
-                <p>Applications</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-android-apps"></i>
-              </div>
-              <a href="/securityapps" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/dscountries" class="small-box-footer">View Data <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
-              <div class="inner">    
-
-                <p>System Up Time</p>
+              <div class="inner">
+                <h3>1961-2019 <sup style="font-size: 20px"></sup></h3>
+                <p>World wide data, covers monthly, seasonal, yearly temperature changes</p>                
               </div>
               <div class="icon">
-                <i class="ion ion-android-alarm-clock"></i>
+                <i class="ion ion-ios-photos"></i>
               </div>
-              <a href="#" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="dsdata" class="small-box-footer">View Data <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-success">
               <div class="inner">
-                  <p>Last Backup</p>
+                <h3>Temperature Change</h3>
+                  <p>Examined how global surface temperature change between 1961 and 2019</p>
               </div>
               <div class="icon">
-                <i class="ion ion-android-list"></i>
+                <i class="ion ion-android-options"></i>
               </div>
-              <a href="#" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/globaldata" class="small-box-footer"> View Analysis <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>Top 10 <sup style="font-size: 20px"></sup></h3>
+                <p>Ten most countries that suffer from temperature change mostly in the last ten years</p>
+                     
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-options"></i>
+              </div>
+              <a href="/mosttemp" class="small-box-footer">View Bar Chart <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>Top 10 <sup style="font-size: 20px"></sup></h3>
+                <p>Ten countries that suffer from temperature change at the very least in the last ten years</p>                           
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-options"></i>
+              </div>
+              <a href="/leasttemp" class="small-box-footer">View Bar Chart <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-prac">
+              <div class="inner">
+                <h3>1961-2019<sup style="font-size: 20px"></sup></h3>
+                <p> Trend between the years according to World, annex I countries and non-annex I countries</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-options"></i>
+              </div>
+              <a href="/trendyears" class="small-box-footer">View Analysis <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-prac">
+              <div class="inner">           
+                <h3>1961-2019 <sup style="font-size: 20px"></sup></h3>
+               
+                <p>Examine the seasonal effects of climate change besides the yearly trend </p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-options"></i>
+              </div>
+              <a href="/seasons" class="small-box-footer">View Analysis <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-prac">
+              <div class="inner">    
+                <h3>1961-2019 <sup style="font-size: 20px"></sup></h3>
+                <p>Historical records had in this decade to learn if global warming more rapid last decade</p>
+             
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-options"></i>
+              </div>
+              <a href="/trendtemp" class="small-box-footer">View Analysis <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+       
           <!-- ./col -->
         </div>
            
@@ -160,7 +167,6 @@
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-
   </div>
 
 {% endblock content %}
@@ -178,6 +184,6 @@
   <script src="/static/assets/js/adminlte.js"></script>
    <!-- AdminLTE for demo purposes -->
   <script src="/static/assets/js/demo.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="/static/assets/plugins/plotly/plotly-latest.min.js"></script>
 
   {% endblock javascripts %}
