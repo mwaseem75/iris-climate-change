@@ -19,7 +19,7 @@ ClassMethod ImportDS() As %String
     ELSE
     {
     //Load DATA statement
-        SET qry = "LOAD DATA FROM FILE  '/opt/irisapp/src/data/climatechange/FAOSTAT_data_11-24-2020.csv' INTO dc.ClimateChange.Countries USING {""from"":{""file"":{""header"":""0""}}}"
+        SET qry = "LOAD DATA FROM FILE  '/opt/irisapp/src/data/climatechange/FAOSTAT_data_11-24-2020.csv' INTO dc.ClimateChange.Countries USING {""from"":{""file"":{""header"":""0"",""skip"":""1""}}}"
         SET rset = ##class(%SQL.Statement).%ExecDirect(,qry)
         IF rset.%SQLCODE
         {
@@ -29,6 +29,7 @@ ClassMethod ImportDS() As %String
 
     Do ..GetColTypes("/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv",.coltype)
     SET tableName= "dc.ClimateChange.Data"
+    //SET coltype = "AreaCode NUMERIC(3,0), Area VARCHAR(100),MonthsCode NUMERIC(4,0),Months VARCHAR(20),ElementCode VARCHAR(4), Element VARCHAR(100), UNIT VARCHAR(3), Y1961 NUMERIC(7,3)"
     SET qry = "CREATE TABLE "_tableName_" ("_coltype_")"
     SET rset = ##class(%SQL.Statement).%ExecDirect(,qry)
     //Check if table created successfully
@@ -39,7 +40,7 @@ ClassMethod ImportDS() As %String
     ELSE
     {
          //Load DATA statement
-        SET qry = "LOAD DATA FROM FILE  '/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv' INTO dc.ClimateChange.Data USING {""from"":{""file"":{""header"":""0""}}}"
+        SET qry = "LOAD DATA FROM FILE  '/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv' INTO dc.ClimateChange.Data USING {""from"":{""file"":{""header"":""0"",""skip"":""1""}}}"
         SET rset = ##class(%SQL.Statement).%ExecDirect(,qry)
         IF rset.%SQLCODE
         {
@@ -57,7 +58,7 @@ ClassMethod GetColTypes(filenamecsv As %String, ByRef coltype As %String, dlm As
     SET coltype=""
     SET stream=..GetStreamFromFile(filenamecsv)      
     SET header=stream.ReadLine() // Get Header columns
-    SET header=$ZCONVERT(header,"L")
+    //SET header=$ZCONVERT(header,"L")
     SET dataLine=stream.ReadLine() // Read First line of data
         
     //Read all the columns of header and add datatype against it        

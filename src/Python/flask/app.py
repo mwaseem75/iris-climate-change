@@ -10,15 +10,21 @@ import plotly.graph_objs as go
 import json
 import plotly
 
+import iris
+
 
 app = Flask(__name__) 
-app.secret_key = "**2a*2ds2*"
+app.secret_key = "**Sec##*"
 
 #Mian route.(index)
 @app.route("/")
 def index():
-    graphJSON = "abc"
-    return render_template("index.html", fig=graphJSON) 
+       
+    #statement = iris.sql.exec("SELECT * FROM ClimateChange.Data")
+    #df = pd.read_csv("/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv", encoding='latin-1') # csv file is encoding as latin-1 type
+    df = "jj"
+        
+    return render_template("index.html", fig=df,my_cols=df) 
 
 @app.route("/fig1")
 def fig1():
@@ -31,7 +37,7 @@ def fig1():
     df_c.reset_index(inplace = True)
 
     df_c = df_c.groupby(
-    ['Country Name',]
+    ['country name',]
     ).agg(
         {
             'tem_change':'mean', 
@@ -41,7 +47,7 @@ def fig1():
     df_c.reset_index(inplace = True)
     df_c = df_c.sort_values(by=['tem_change'],ascending=False).head(10)
 
-    fig = px.bar(df_c, x="Country Name", y='tem_change' ,text='tem_change', title="Top ten countries that have highest temperature change in the last decades")
+    fig = px.bar(df_c, x="country name", y='tem_change' ,text='tem_change', title="Top ten countries that have highest temperature change in the last decades")
     fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
 
     # adjusting size of graph, legend place, and background colour
@@ -90,7 +96,7 @@ def fig2():
 
 
     df_c = df_c.groupby(
-    ['Country Name',]
+    ['country name',]
     ).agg(
         {
             'tem_change':'mean', 
@@ -100,7 +106,7 @@ def fig2():
     df_c.reset_index(inplace = True)
     df_c = df_c.sort_values(by=['tem_change'],ascending=True).head(10)
 
-    fig = px.bar(df_c, x="Country Name", y='tem_change',text='tem_change' , title="Top ten countries that have lowest temperature change in the last decades")
+    fig = px.bar(df_c, x="country name", y='tem_change',text='tem_change' , title="Top ten countries that have lowest temperature change in the last decades")
     fig.update_traces(texttemplate='%{text:.2f}', textposition='outside')
     # adjusting size of graph, legend place, and background colour
     fig.update_layout(
@@ -141,9 +147,9 @@ def fig3():
     df = getDataFrame()
         
     df0 = df[df['Months'] == 'Meteorological year'] # new data frame includes only yearly values
-    df1 = df0[df0['Country Name'] == 'World'] # from new data frame filtering World's data
-    df2 = df0[df0['Country Name'] == 'Annex I countries'] # from new data frame filtering'Annex I countries' data
-    df3 = df0[df0['Country Name'] == 'Non-Annex I countries'] # from new data frame filtering  'Non-Annex I countries' data
+    df1 = df0[df0['country name'] == 'World'] # from new data frame filtering World's data
+    df2 = df0[df0['country name'] == 'Annex I countries'] # from new data frame filtering'Annex I countries' data
+    df3 = df0[df0['country name'] == 'Non-Annex I countries'] # from new data frame filtering  'Non-Annex I countries' data
 
     # Create traces
     fig = go.Figure()
@@ -213,7 +219,7 @@ def fig4():
     #Get DataFrame
     df = getDataFrame()
         
-    df0 = df[df['Country Name'] == 'World']
+    df0 = df[df['country name'] == 'World']
     df1 = df0[df0['Months'] == 'Winter']
     df2 = df0[df0['Months'] == 'Spring']
     df3 = df0[df0['Months'] == 'Summer']
@@ -286,7 +292,7 @@ def fig5():
     #Get DataFrame
     df = getDataFrame()
         
-    df0 = df[df['Country Name'] == 'World']
+    df0 = df[df['country name'] == 'World']
     df0.set_index("Months", inplace=True)
     df0 = df0.loc[['January', 'February', 'March', 'April', 'May', 'June', 'July','August', 'September', 'October', 'November', 'December' ]]
     df0.reset_index(inplace = True)
@@ -338,10 +344,10 @@ def fig6():
     df_map['°C'] = ['<=-1.5' if x<=(-1.5) else '<=-1.0' if (-1.5)<x<=(-1.0) else '<=0.0' if (-1.0)<x<=0.0  else '<=0.5' if 0.0<x<=0.5 else '<=1.5' if 0.5<x<=1.5 else '>1.5' if 1.5<=x<10 else 'None' for x in df_map['tem_change']]
     # categorized each of temperature changes
 
-    fig = px.choropleth(df_map, locations="Country Code", # used plotly express choropleth for animation plot
+    fig = px.choropleth(df_map, locations="country code", # used plotly express choropleth for animation plot
                         color="°C", 
                         locationmode='ISO-3',
-                        hover_name="Country Name",
+                        hover_name="country name",
                         hover_data=['tem_change'],
                         animation_frame =df_map.year,
                         labels={'tem_change':'The Temperature Change', '°C':'°C'},
@@ -374,32 +380,40 @@ def fig6():
     return render_template("index.html", fig=graphJSON)
 
 def getDataFrame():
-    df = pd.read_csv("src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv", encoding='latin-1') # csv file is encoding as latin-1 type
-    df_countrycode=pd.read_csv('src/data/climatechange/FAOSTAT_data_11-24-2020.csv') #this csv file includes ISO-3 Country Code, this mentioned in Data Wrangling 
+    #statement = iris.sql.exec("SELECT * FROM ClimateChange.Data")
+    df= pd.read_csv("/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv", encoding='latin-1') # csv file is encoding as latin-1 type
+    #df = statement.dataframe()
+    #df_countrycode=pd.read_csv('src/data/climatechange/FAOSTAT_data_11-24-2020.csv') #this csv file includes ISO-3 Country Code, this mentioned in Data Wrangling 
+
+    statement = iris.sql.exec('SELECT Country as "Country Name", ISO3Code as "Country Code" FROM ClimateChange.Countries') 
+    df_countrycode = statement.dataframe()
+    
 
     #Renaming
-    df.rename(columns = {'Area':'Country Name'},inplace = True)
+    df.rename(columns = {'Area':'country name'},inplace = True)
     df.set_index('Months', inplace=True)
-    df.rename({'Dec\x96Jan\x96Feb': 'Winter', 'Mar\x96Apr\x96May': 'Spring', 'Jun\x96Jul\x96Aug':'Summer','Sep\x96Oct\x96Nov':'Fall'}, axis='index',inplace = True)
+    df.rename({'Dec-Jan-Feb': 'Winter', 'Mar-Apr-May': 'Spring', 'Jun-Jul-Aug':'Summer','Sep-Oct-Nov':'Fall'}, axis='index',inplace = True)
     df.reset_index(inplace = True)
 
-    #Filtering 
+    #Filtering EndYear
     df = df[df['Element'] == 'Temperature change']
 
     #Drop unwanted columns from df_countrycode
-    df_countrycode.drop(['Country Code','M49 Code','ISO2 Code','Start Year','End Year'],axis=1,inplace=True)
-    df_countrycode.rename(columns = {'Country':'Country Name','ISO3 Code':'Country Code'},inplace=True)
+    #df_countrycode.drop(['CountryCode','M49Code','ISO2Code','StartYear','EndYear'],axis=1,inplace=True)
+    #df_countrycode.rename(columns = {'Country':'Country Name','ISO3Code':'Country Code'},inplace=True)
 
     #Merging with df to df_country
-    df = pd.merge(df, df_countrycode, how='outer', on='Country Name')
+    df = pd.merge(df, df_countrycode, how='outer', on='country name')
 
     #Drop unwanted columns
-    df.drop(['Area Code','Months Code','Element Code','Element','Unit'],axis=1,inplace=True)
+    df.drop(['AreaCode','MonthsCode','ElementCode','Element','Unit'],axis=1,inplace=True)
 
     #Channing dataframe organization
-    df = df.melt(id_vars=["Country Code", "Country Name","Months",], var_name="year", value_name="tem_change")
+    df = df.melt(id_vars=["country code", "country name","Months",], var_name="year", value_name="tem_change")
     df["year"] = [i.split("Y")[-1] for i in df.year]
 
+
+    
     return df
 
 if __name__ == '__main__':

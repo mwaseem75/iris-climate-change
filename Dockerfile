@@ -1,6 +1,6 @@
+#ARG IMAGE=intersystemsdc/iris-community
+ARG IMAGE=intersystemsdc/iris-community:preview
 #ARG IMAGE=containers.intersystems.com/intersystems/irishealth-community:2021.2.0.651.0
-ARG IMAGE=intersystemsdc/iris-community
-#ARG IMAGE=intersystemsdc/iris-community:preview
 FROM $IMAGE
 
 # For non community version
@@ -25,19 +25,17 @@ USER ${ISC_PACKAGE_MGRUSER}
 COPY . /opt/irisapp
 #COPY  Installer.cls .
 # load demo stuff
-COPY iris.script /opt/irisapp/iris.script
-
-RUN iris start IRIS \
-	&& iris session IRIS < /opt/irisapp/iris.script && iris stop IRIS quietly
-
-# create Python env
-ENV PYTHON_PATH=/usr/irissys/bin/irispython
-ENV SRC_PATH=/opt/irisapp
-ENV IRISUSERNAME "SuperUser"
-ENV IRISPASSWORD "SYS"
+#OPY iris.script /opt/irisapp/iris.script
 
 # Requirement for embedded python
 #RUN pip3 install -r ${SRC_PATH}/src/Python/requirements.txt
 RUN pip3 install flask>=2.0.1
 RUN pip3 install pandas
 RUN pip3 install plotly
+
+# create Python env
+ENV SRC_PATH=/opt/irisapp
+#ENV PATH "/usr/irissys/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/irisowner/bin"
+
+RUN iris start IRIS \
+	&& iris session IRIS < /opt/irisapp/iris.script && iris stop IRIS quietly

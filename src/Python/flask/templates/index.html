@@ -14,21 +14,9 @@
   <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="/static/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="/static/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="/static/assets/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="/static/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="/static/assets/plugins/daterangepicker/daterangepicker.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="/static/assets/plugins/summernote/summernote-bs4.min.css">
-
+  
 {% endblock stylesheets %}
 
 {% block content %}
@@ -39,11 +27,10 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-2 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
-              <div class="inner">
-               
+              <div class="inner">              
 
                 <p>Processes</p>
               </div>
@@ -54,22 +41,64 @@
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-2 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
                 <h3>55 <sup style="font-size: 20px"></sup></h3>
-
                 <p>Messages</p>
+                <p>This is great message from Messages</p>                
               </div>
               <div class="icon">
                 <i class="ion ion-android-chat"></i>
               </div>
-              <a href="/messages" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/fig1" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>55 <sup style="font-size: 20px"></sup></h3>
+                <p>Messages</p>
+                <p>This is great message from Messages</p>                
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-chat"></i>
+              </div>
+              <a href="/fig1" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>55 <sup style="font-size: 20px"></sup></h3>
+                <p>Messages</p>
+                <p>This is great message from Messages</p>                
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-chat"></i>
+              </div>
+              <a href="/fig1" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>55 <sup style="font-size: 20px"></sup></h3>
+                <p>Messages</p>
+                <p>This is great message from Messages</p>                
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-chat"></i>
+              </div>
+              <a href="/fig1" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-2 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
@@ -84,11 +113,10 @@
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-2 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
-              <div class="inner">
-              
+              <div class="inner">           
 
                 <p>Applications</p>
               </div>
@@ -98,11 +126,10 @@
               <a href="/securityapps" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <div class="col-lg-2 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
-              <div class="inner">
-               
+              <div class="inner">    
 
                 <p>System Up Time</p>
               </div>
@@ -112,13 +139,11 @@
               <a href="#" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <div class="col-lg-2 col-6">
+          <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-              
-
-                <p>Last Backup</p>
+                  <p>Last Backup</p>
               </div>
               <div class="icon">
                 <i class="ion ion-android-list"></i>
@@ -128,102 +153,7 @@
           </div>
           <!-- ./col -->
         </div>
-        <!-- /.row -->
-          <!-- /.row -->
-
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">                  
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-12">
-                      
-                      <div class="card-body">
-                       
-                          <h3>Plotly.newPlot("myPlot",   fig | safe  )</h3>
-                          <div id="myPlot"></div>
-                       
-                      </div>
-                      <!-- /.chart-responsive -->
-                    </div>
-                    </div>
-                  <!-- /.row -->
-                </div>
-            
-                <!-- ./card-body -->
-                <div class="card-footer">
-                  <div class="row">
-                    <div class="col-sm-2 col-6">
-                      <div class="description-block border-right">
-                       
-            
-                        <span class="description-text">Globals/Second</span>
-                      </div>
-                      <!-- /.description-block -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-2 col-6">
-                      <div class="description-block border-right">
-                       
-        
-                        <span class="description-text">Global Refs</span>
-                      </div>
-                      <!-- /.description-block -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-2 col-6">
-                      <div class="description-block border-right">
-                        
-                 
-                        <span class="description-text">Global Sets</span>
-                      </div>
-                      <!-- /.description-block -->
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-2 col-6">
-                      <div class="description-block">
-                       
-                
-                        <span class="description-text">Routine Refs</span>
-                      </div>
-                      <!-- /.description-block -->
-                    </div>
-                    <div class="col-sm-2 col-6">
-                      <div class="description-block">
-                        
-                       <span class="description-text">Logical Requests</span>
-                      </div>
-                      <!-- /.description-block -->
-                    </div>
-                    <div class="col-sm-2 col-6">
-                      <div class="description-block">
-                        
-                      
-                        <span class="description-text">Cache Efficiency</span>
-                      </div>
-                      <!-- /.description-block -->
-                    </div>
-                  </div>
-                  <!-- /.row -->
-                </div>
-                <!-- /.card-footer -->
-              </div>
-              <!-- /.card -->
-            </div>
-            <!-- /.col -->
-          </div>
-    
-        <!-- Main row -->
-       
-              <!-- /.card-body -->
-             
-              <!-- /.card-footer-->
-          
-            <!--/.direct-chat -->
-
            
-            <!-- /.card -->
           </section>
         </div>
         <!-- /.row (main row) -->
@@ -242,36 +172,12 @@
   <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->
   <script src="/static/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-  <script>
-    $.widget.bridge('uibutton', $.ui.button)
-  </script>
   <!-- Bootstrap 4 -->
   <script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- ChartJS -->
-  <script src="/static/assets/plugins/chart.js/Chart.min.js"></script>
-  <!-- Sparkline -->
-  <script src="/static/assets/plugins/sparklines/sparkline.js"></script>
-  <!-- JQVMap -->
-  <script src="/static/assets/plugins/jqvmap/jquery.vmap.min.js"></script>
-  <script src="/static/assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-  <!-- jQuery Knob Chart -->
-  <script src="/static/assets/plugins/jquery-knob/jquery.knob.min.js"></script>
-  <!-- daterangepicker -->
-  <script src="/static/assets/plugins/moment/moment.min.js"></script>
-  <script src="/static/assets/plugins/daterangepicker/daterangepicker.js"></script>
-  <!-- Tempusdominus Bootstrap 4 -->
-  <script src="/static/assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-  <!-- Summernote -->
-  <script src="/static/assets/plugins/summernote/summernote-bs4.min.js"></script>
-  <!-- overlayScrollbars -->
-  <script src="/static/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <!-- AdminLTE App -->
+   <!-- AdminLTE App -->
   <script src="/static/assets/js/adminlte.js"></script>
    <!-- AdminLTE for demo purposes -->
   <script src="/static/assets/js/demo.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script>
-    Plotly.newPlot("myPlot", {{ fig | safe }})
- </script>  
+
   {% endblock javascripts %}

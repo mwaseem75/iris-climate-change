@@ -1,0 +1,167 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Element injected in the BODY element -->
+{% block body_class %}  {% endblock body_class %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+  <link rel="icon" type="image/png" href="/static/assets/img/app.ico">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/static/assets/css/adminlte.min.css">
+  
+{% endblock stylesheets %}
+
+{% block content %}
+  
+  <div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">              
+
+                <p>Processes</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-ios-photos"></i>
+              </div>
+              <a href="/processes" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>55 <sup style="font-size: 20px"></sup></h3>
+
+                <p>Messages</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-chat"></i>
+              </div>
+              <a href="/messages" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+               
+
+                <p>Security Users</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="/securityusers" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">           
+
+                <p>Applications</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-apps"></i>
+              </div>
+              <a href="/securityapps" class="small-box-footer">View Details <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">    
+
+                <p>System Up Time</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-alarm-clock"></i>
+              </div>
+              <a href="#" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                  <p>Last Backup</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-android-list"></i>
+              </div>
+              <a href="#" class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">                  
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">                    
+                    <div class="card-body">
+                      <h3>{{ my_cols }}</h3>
+                        <h3>Plotly.newPlot("myPlot",   fig | safe  )</h3>
+                        <div id="myPlot"></div>                     
+                    </div>
+                    <!-- /.chart-responsive -->
+                  </div>
+                </div>
+                <!-- /.row -->
+              </div>
+            </div>
+          </div>
+        </div>
+            
+
+
+
+          </section>
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <!-- jQuery -->
+  <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="/static/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/static/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <!-- AdminLTE App -->
+  <script src="/static/assets/js/adminlte.js"></script>
+   <!-- AdminLTE for demo purposes -->
+  <script src="/static/assets/js/demo.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script>
+    Plotly.newPlot("myPlot", {{ fig | safe }})
+ </script>  
+  {% endblock javascripts %}
