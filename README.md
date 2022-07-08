@@ -16,26 +16,14 @@ This application uses [**InterSystems Globals**](https://docs.intersystems.com/i
 #### Application layout
 ![](https://github.com/mwaseem75/iris-climate-change/blob/main/IRIS_ClimateChange.gif)
 
-
-![image](https://user-images.githubusercontent.com/18219467/161664483-97916a70-0dd8-4457-b4eb-6a955e8fde31.png)
-![image](https://user-images.githubusercontent.com/18219467/161664316-f335282b-dacc-4449-948b-6a95f8d2efe7.png)
-![image](https://user-images.githubusercontent.com/18219467/161664745-d7ade45c-2ca3-41f5-82da-b5233aa7ebf1.png)
-
-
-![image](https://user-images.githubusercontent.com/18219467/161664930-496cc973-0c80-42eb-9aa4-c520eee72cd7.png)
-![image](https://user-images.githubusercontent.com/18219467/161623213-080a4ab5-57c3-4925-9832-fbdbdad27cf2.png)
-
-
-## Recommendation 
- * Read related documentations [Using Globals](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GGBL)
- * [Introduction to the Native SDK](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=BPYNAT_intro)
- * [PYVIS Interactive network visualizations Liabrary](https://pyvis.readthedocs.io/en/latest/)
+## Dataset
+[The Food and Agriculture Organization (FAO) Climate Change dataset](https://www.fao.org/faostat/en/#data/ET) : The FAOSTAT Temperature Change domain disseminates statistics of mean surface temperature change by country, with annual updates. The current dissemination covers the period 1961-2021. [LICENCE Details](https://www.fao.org/contact-us/terms/db-terms-of-use/en/)
 
 ## Installation
 1. Clone/git pull the repo into any local directory
 
 ```
-git clone https://github.com/mwaseem75/iris-globals-graphDB.git
+git clone https://github.com/mwaseem75/iris-climate-change.git
 ```
 
 2. Open a Docker terminal in this directory and run:
