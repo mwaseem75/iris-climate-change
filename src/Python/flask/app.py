@@ -1,15 +1,14 @@
 from flask import Flask, render_template
+#to get dataframe
 import pandas as pd
-
 #data visualization
+import plotly
 import plotly.graph_objects as go
 import plotly.express as px
 import plotly.offline as pyo
-import plotly.graph_objs as go
-
+#to get json data
 import json
-import plotly
-
+#to retrieve data from iris
 import iris
 
 
@@ -63,7 +62,14 @@ def mosttemp():
     df_c.reset_index(inplace = True)
     df_c = df_c.sort_values(by=['tem_change'],ascending=False).head(10)
 
-    fig = px.bar(df_c, x="country name", y='tem_change' ,text='tem_change', title="Top ten countries that have highest temperature change in the last decades")
+    fig = px.bar(df_c, x="country name", y='tem_change' ,text='tem_change', 
+    title="Top ten countries that have highest temperature change in the last decades"
+           "<br>The top ten list shows Europe and some European countries. It also has been illustrated that Europe"
+           "<br> is affected mostly by climate change. And not surprisingly, all countries on the list are industrialized countries,"
+           "<br> excluding 'Svalbard and Jan Mayen Islands'." 
+    
+    
+    )
     fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
 
     # adjusting size of graph, legend place, and background colour
@@ -214,6 +220,8 @@ def trendyears():
         ),
         
         template='seaborn',
+          title="it is clearly seen while 'Annex I countries' has a relatively smooth line, 'Non-Annex I countries' has a more fluctuated line"
+           
         paper_bgcolor="rgb(234, 234, 242)",
         legend=dict(
             orientation="h",
@@ -239,7 +247,7 @@ def seasons():
     df2 = df0[df0['Months'] == 'Spring']
     df3 = df0[df0['Months'] == 'Summer']
     df4 = df0[df0['Months'] == 'Fall']
-    import plotly.graph_objects as go
+    
 
     # Create traces
     fig = go.Figure()
@@ -288,6 +296,7 @@ def seasons():
             pad=4
         ),
         template='seaborn',
+        title="it is clearly seen while Summer has a relatively smooth line, Winter has a more fluctuated line",
         paper_bgcolor="rgb(234, 234, 242)",
         legend=dict(
             orientation="h",
@@ -368,7 +377,7 @@ def globaldata():
                         labels={'tem_change':'The Temperature Change', '°C':'°C'},
                         category_orders={'°C':['<=-1.5','<=-1.0','<=0.0','<=0.5','<=1.5','>1.5','None']},
                         color_discrete_map={'<=-1.5':"#08519c",'<=-1.0':"#9ecae1",'<=0.0':"#eff3ff",'<=0.5':"#ffffb2",'<=1.5': "#fd8d3c",'>1.5':"#bd0026",'None':"#252525"},
-                        title = 'Temperature Change - 1961 - 2019<br>when examining the top ten areas that have the highest temperature change in the last decade are mostly industrialized countries<br>Additionally, temperature increased every ten decades, and the last decade can count as the hottest decade'                      
+                        title = 'Temperature Change - 1961 - 2019<br>When examining the top ten areas that have the highest temperature change in the last decade are mostly industrialized countries.<br>Additionally, temperature increased every ten decades, and the last decade can count as the hottest decade'                      
                         )
 
     # adjusting size of map, legend place, and background colour
@@ -384,6 +393,9 @@ def globaldata():
             pad=4
         ),
         template='seaborn',
+        title="Result shows that already eight of the ten years in the current decade were among the ten hottest years on"
+        "<br>record in terms of mean annual temperatures."
+        "<br>Additionally, Radar chart clearly shows how temperature change increased day by day.",
         paper_bgcolor="rgb(234, 234, 242)",
         legend=dict(
             orientation="v",

@@ -34,8 +34,7 @@
                 <div class="row">
                   <div class="col-md-12">                    
                     <div class="card-body">
-                      <h3>{{ my_cols }}</h3>
-                        <h3>Plotly.newPlot("myPlot",   fig | safe  )</h3>
+                     
                         <div id="myPlot"></div>                     
                     </div>
                     <!-- /.chart-responsive -->
@@ -71,6 +70,7 @@
    <!-- AdminLTE for demo purposes -->
   <script src="/static/assets/js/demo.js"></script>
   <script src="/static/assets/plugins/plotly/plotly-latest.min.js"></script>
+  
   <script>
     Plotly.newPlot("myPlot", {{ fig | safe }})
  </script>  
