@@ -44,7 +44,8 @@ To run the application Navigate to http://localhost:4040
 ![image](https://user-images.githubusercontent.com/18219467/177929434-f189f677-9d1e-4775-99af-d4a4106dda95.png)
 ###### Management Portal
 dataset is aleady loaded upon creation. To view table navigate to Management portal SQL by using USER namespace
-![image](https://user-images.githubusercontent.com/18219467/177929861-9f1821f7-4625-462b-b092-daf7f3e67290.png)
+![image](https://user-images.githubusercontent.com/18219467/177931814-6a6ef4cf-ddce-442c-ab7a-d34c0a3609af.png)
+
 ###### View data click countries and other view data
 ![image](https://user-images.githubusercontent.com/18219467/177930218-f646aa94-0ad3-43a2-9b01-6a5d930fc810.png)
 ###### Map animation 
