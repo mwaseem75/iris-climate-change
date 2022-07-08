@@ -4,8 +4,8 @@ IRIS Climate Chage application investigates the reality of the increase in tempe
 This application uses [The Food and Agriculture Organization (FAO) Climate Change](https://www.fao.org/faostat/en/#data/ET) dataset and to present data with the help of [**Python Flask Web**](https://flask.palletsprojects.com/) Framework, [**Pandas Python data analysis**](https://pandas.pydata.org/) Liabrary, [**Plotly Open Source Graphing Library for Python**](https://plotly.com/python/) and [**Plotly JavaScript Open Source Graphing Library**](https://plotly.com/javascript/) Library.  
 
 ## Features
-* Import dataset by using [LOAD DATA (SQL)](https://irisdocs.intersystems.com/iris20212/csp/docbook/DocBook.UI.Page.cls?KEY=RSQL_loaddata)
-* Flask Web application to view and visualize data
+* Import [The Food and Agriculture Organization (FAO) Climate Change](https://www.fao.org/faostat/en/#data/ET) dataset by using [LOAD DATA (SQL)](https://irisdocs.intersystems.com/iris20212/csp/docbook/DocBook.UI.Page.cls?KEY=RSQL_loaddata) functionality
+* [**Python Flask Web**](https://flask.palletsprojects.com/) Framework Flask Web application to view and visualize data
 * Use of Python data science, data analysis and visualization liabraries
 * Map Animation to show global surface climate change
 * Bar Graph to show top 10 most and least temprature change
