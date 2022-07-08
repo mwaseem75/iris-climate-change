@@ -62,10 +62,6 @@ Clieck sir
 ###### Radar Sir
 ![image](https://user-images.githubusercontent.com/18219467/177931438-dc30a289-aa0b-4dcd-a59f-a47749d2b3f4.png)
 
-###### Seasons
-![Uploading image.png…]()
-###### Radar Sir
-![Uploading image.png…]()
 
 
 
