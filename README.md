@@ -4,7 +4,7 @@ IRIS Climate Chage application investigates the reality of the increase in tempe
 This application uses [**InterSystems Globals**](https://docs.intersystems.com/iris20212/csp/docbook/Doc.View.cls?KEY=PAGE_globals) dataset and to present data with the help of [**Python Flask Web**](https://flask.palletsprojects.com/) Framework and [**Ploty**](https://pyvis.readthedocs.io/en/latest/) Library.  
 
 ## Features
-* Import dataset by using SQL Load functionality
+* Import dataset by using [LOAD DATA (SQL)](https://irisdocs.intersystems.com/iris20212/csp/docbook/DocBook.UI.Page.cls?KEY=RSQL_loaddata)
 * Flask Web application to view and visualize data
 * Use of Python datascience and data visualiztion liabraries
 * Map Animation to show global surface climate change
