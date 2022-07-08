@@ -14,8 +14,7 @@ This application uses [**InterSystems Globals**](https://docs.intersystems.com/i
 * Another Chart to display same
 
 #### Application layout
-![image](https://user-images.githubusercontent.com/18219467/161662020-b135e968-b51d-469c-976c-df3651420e17.png)
-![image](https://user-images.githubusercontent.com/18219467/161668529-c9fd2ca8-3c70-4c6e-9426-73b5c8e6162d.png)
+![](https://github.com/mwaseem75/iris-climate-change/blob/main/IRIS_ClimateChange.gif)
 
 
 ![image](https://user-images.githubusercontent.com/18219467/161664483-97916a70-0dd8-4457-b4eb-6a955e8fde31.png)
