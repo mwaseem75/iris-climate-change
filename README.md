@@ -7,7 +7,7 @@ This application uses [**InterSystems Globals**](https://docs.intersystems.com/i
 * Import dataset by using SQL Load functionality
 * Flask Web application to view and visualize data
 * Use of Python datascience and data visualiztion liabraries
-* Map Animation 
+* Map Animation to show global surface climate change
 * Bar Graph to show top 10 most and least temprature change
 * Climate Change analusis
 * Line Graph to show trends
