@@ -155,8 +155,6 @@ def leasttemp():
             title_font = {"size": 15},
             title_standoff = 0)
     fig.update_yaxes(showticklabels=False, title='Temperature Change')
-
-
     #####################################################################
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return render_template("main.html", fig=graphJSON)
@@ -220,8 +218,7 @@ def trendyears():
         ),
         
         template='seaborn',
-          title="it is clearly seen while 'Annex I countries' has a relatively smooth line, 'Non-Annex I countries' has a more fluctuated line"
-           
+        title="it is clearly seen while 'Annex I countries' has a relatively smooth line, 'Non-Annex I countries' has a more fluctuated line",
         paper_bgcolor="rgb(234, 234, 242)",
         legend=dict(
             orientation="h",
