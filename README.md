@@ -6,7 +6,7 @@ This application uses [The Food and Agriculture Organization (FAO) Climate Chang
 ## Features
 * Import dataset by using [LOAD DATA (SQL)](https://irisdocs.intersystems.com/iris20212/csp/docbook/DocBook.UI.Page.cls?KEY=RSQL_loaddata)
 * Flask Web application to view and visualize data
-* Use of Python datascience and data visualiztion liabraries
+* Use of Python data science, data analysis and visualization liabraries
 * Map Animation to show global surface climate change
 * Bar Graph to show top 10 most and least temprature change
 * Climate Change analusis
