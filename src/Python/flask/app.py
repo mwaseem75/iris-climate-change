@@ -18,9 +18,9 @@ app.secret_key = "**Sec##*"
 #Mian route.(index)
 @app.route("/")
 def index():
-  
-    return render_template("index.html") 
+      return render_template("index.html") 
 
+#To View dataset countries data
 @app.route("/dscountries")
 def countries():
     statement = iris.sql.exec("SELECT * FROM ClimateChange.Countries") 
@@ -31,6 +31,7 @@ def countries():
     fheading = "Countries and Teritories"
     return render_template('tablesdata.html',  ftitle = ftitle, fheading = fheading, my_data = my_data, my_cols = my_cols)    
 
+#To View dataset climate change data
 @app.route("/dsdata")
 def dsdata():
     statement = iris.sql.exec("SELECT * FROM ClimateChange.Data") 
@@ -41,6 +42,7 @@ def dsdata():
     fheading = "Countries and Teritories"
     return render_template('tablesdata.html',  ftitle = ftitle, fheading = fheading, my_data = my_data, my_cols = my_cols)    
 
+#Ten most countries that suffer from temperature change mostly in the last ten years
 @app.route("/mosttemp")
 def mosttemp():
     #Get DataFrame
@@ -66,10 +68,7 @@ def mosttemp():
     title="Top ten countries that have highest temperature change in the last decades"
            "<br>The top ten list shows Europe and some European countries. It also has been illustrated that Europe"
            "<br> is affected mostly by climate change. And not surprisingly, all countries on the list are industrialized countries,"
-           "<br> excluding 'Svalbard and Jan Mayen Islands'." 
-    
-    
-    )
+           "<br> excluding 'Svalbard and Jan Mayen Islands'." )
     fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
 
     # adjusting size of graph, legend place, and background colour
@@ -100,11 +99,10 @@ def mosttemp():
             title_standoff = 0)
     fig.update_yaxes(showticklabels=False,tickmode="auto", title='Temperature Change',title_standoff = 0)
 
-    #fig.show()
-    #fig.write_html("file.html") 
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return render_template("main.html", fig=graphJSON) 
-       
+
+#Ten countries that suffer from temperature change at the very least in the last ten years       
 @app.route("/leasttemp")
 def leasttemp():
     #Get DataFrame
@@ -155,11 +153,11 @@ def leasttemp():
             title_font = {"size": 15},
             title_standoff = 0)
     fig.update_yaxes(showticklabels=False, title='Temperature Change')
-    #####################################################################
+   
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return render_template("main.html", fig=graphJSON)
 
-
+#Trend between the years according to World, annex I countries and non-annex I countries
 @app.route("/trendyears")
 def trendyears():
     #Get DataFrame
@@ -233,7 +231,8 @@ def trendyears():
 
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return render_template("main.html", fig=graphJSON)
- 
+
+#examine the seasonal effects of climate change besides the yearly trend 
 @app.route("/seasons")
 def seasons():
     #Get DataFrame
@@ -307,7 +306,8 @@ def seasons():
 
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return render_template("main.html", fig=graphJSON)
-    
+
+#how many historical records had in this decade to learn if global warning more rapid last decade    
 @app.route("/trendtemp")
 def trendtemp():
     #Get DataFrame
@@ -338,6 +338,9 @@ def trendtemp():
             pad=4
         ),
         template='seaborn',
+        title="Result shows that already eight of the ten years in the current decade were among the ten hottest years on"
+        "<br>record in terms of mean annual temperatures."
+        "<br>Additionally, Radar chart clearly shows how temperature change increased day by day.",
         paper_bgcolor="rgb(234, 234, 242)",
         legend=dict(
             orientation="h",
@@ -350,6 +353,7 @@ def trendtemp():
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return render_template("main.html", fig=graphJSON)
     
+#Map animation to examine how global surface temperature change     
 @app.route("/globaldata")
 def globaldata():
     #Get DataFrame
@@ -390,9 +394,7 @@ def globaldata():
             pad=4
         ),
         template='seaborn',
-        title="Result shows that already eight of the ten years in the current decade were among the ten hottest years on"
-        "<br>record in terms of mean annual temperatures."
-        "<br>Additionally, Radar chart clearly shows how temperature change increased day by day.",
+        title="This map shows how climate change gets serious year by year.",
         paper_bgcolor="rgb(234, 234, 242)",
         legend=dict(
             orientation="v",
@@ -405,15 +407,11 @@ def globaldata():
     return render_template("main.html", fig=graphJSON)
 
 def getDataFrame():
-    #statement = iris.sql.exec("SELECT * FROM ClimateChange.Data")
     df= pd.read_csv("/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv", encoding='latin-1') # csv file is encoding as latin-1 type
-    #df = statement.dataframe()
-    #df_countrycode=pd.read_csv('src/data/climatechange/FAOSTAT_data_11-24-2020.csv') #this csv file includes ISO-3 Country Code, this mentioned in Data Wrangling 
-
+    #Get data from IRIS
     statement = iris.sql.exec('SELECT Country as "Country Name", ISO3Code as "Country Code" FROM ClimateChange.Countries') 
     df_countrycode = statement.dataframe()
     
-
     #Renaming
     df.rename(columns = {'Area':'country name'},inplace = True)
     df.set_index('Months', inplace=True)
@@ -422,10 +420,6 @@ def getDataFrame():
 
     #Filtering EndYear
     df = df[df['Element'] == 'Temperature change']
-
-    #Drop unwanted columns from df_countrycode
-    #df_countrycode.drop(['CountryCode','M49Code','ISO2Code','StartYear','EndYear'],axis=1,inplace=True)
-    #df_countrycode.rename(columns = {'Country':'Country Name','ISO3Code':'Country Code'},inplace=True)
 
     #Merging with df to df_country
     df = pd.merge(df, df_countrycode, how='outer', on='country name')
@@ -437,8 +431,6 @@ def getDataFrame():
     df = df.melt(id_vars=["country code", "country name","Months",], var_name="year", value_name="tem_change")
     df["year"] = [i.split("Y")[-1] for i in df.year]
 
-
-    
     return df
 
 if __name__ == '__main__':
