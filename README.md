@@ -44,9 +44,10 @@ docker-compose up -d
 ## Run the application
 To run the application Navigate to http://localhost:4040 
 ###### Dashboard
-![image](https://user-images.githubusercontent.com/18219467/177929434-f189f677-9d1e-4775-99af-d4a4106dda95.png)
+![image](https://user-images.githubusercontent.com/18219467/178123487-98b20148-4888-46b6-bfbb-0717b22525b4.png)
+ 
 ###### Management Portal
-dataset is aleady loaded upon creation. To view table navigate to Management portal SQL by using USER namespace
+Upon container initilization dataset is imported to IRIS. To view table navigate to Management portal SQL by using USER namespace
 ![image](https://user-images.githubusercontent.com/18219467/177931814-6a6ef4cf-ddce-442c-ab7a-d34c0a3609af.png)
 
 ###### View data click countries and other view data
