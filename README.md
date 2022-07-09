@@ -1,15 +1,17 @@
 ## Summary
-Climate change is one of the important issues that face the world in this technological era. The best proof of this situation is the historical temperature change.
-IRIS Climate Chage application investigates the reality of the increase in temperatures linked to industrial activities and the greenhouse effect. And before this investigation, the aim of this part enlight the significant sides of the temperature change data for each area. 
-This application uses [The Food and Agriculture Organization (FAO) Climate Change](https://www.fao.org/faostat/en/#data/ET) dataset and to present data with the help of [**Python Flask Web**](https://flask.palletsprojects.com/) Framework, [**Pandas Python data analysis**](https://pandas.pydata.org/) Liabrary, [**Plotly Open Source Graphing Library for Python**](https://plotly.com/python/) and [**Plotly JavaScript Open Source Graphing Library**](https://plotly.com/javascript/) Library.  
+Climate change is one of the important issues that face the world in this technological era. According to NASA, Water Vapour, Carbon dioxide(CO₂), Methane, Nitrous oxide, Chlorofluorocarbons(CFCs) contribute to the greenhouse effect. Over the last century, human activities have increased concentrations of this natural greenhouseThe best proof of this situation is the historical temperature change. These human-produced temperature increases are commonly referred to as [**global warming**](https://climate.nasa.gov/resources/global-warming-vs-climate-change/).
+
+IRIS Climate Chage application investigates the reality of the increase in temperatures linked to industrial activities and the greenhouse effect. 
 
 ## Features
 * Import [The Food and Agriculture Organization (FAO) Climate Change](https://www.fao.org/faostat/en/#data/ET) dataset by using [LOAD DATA (SQL)](https://irisdocs.intersystems.com/iris20212/csp/docbook/DocBook.UI.Page.cls?KEY=RSQL_loaddata) functionality
 * Web application with the help of [**Python Flask Web**](https://flask.palletsprojects.com/) Framework 
 * [**Pandas Python data analysis**](https://pandas.pydata.org/) Liabrary, [**Plotly Open Source Graphing Library for Python**](https://plotly.com/python/)
 * [**Plotly JavaScript Open Source Graphing Library**](https://plotly.com/javascript/) Library
-* Map Animation to show global surface climate change
-* Bar Graph to show top 10 most and least temprature change
+######Data Science (Analysis and Visualization)
+* **Map Animation** to show global surface climate change from 1961 to 2021.
+* **Bar Graph** to show ten most countries that suffer from temperature change.
+* **Bar Graph** to show ten countries that suffer from temperature change at the very least in the last ten years
 * Climate Change analusis
 * Line Graph to show trends
 * Another Chart to display same
