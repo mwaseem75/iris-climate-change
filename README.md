@@ -8,15 +8,14 @@ IRIS Climate Chage application investigates the reality of the increase in tempe
 * Web application with the help of [**Python Flask Web**](https://flask.palletsprojects.com/) Framework 
 * [**Pandas Python data analysis**](https://pandas.pydata.org/) Liabrary, [**Plotly Open Source Graphing Library for Python**](https://plotly.com/python/)
 * [**Plotly JavaScript Open Source Graphing Library**](https://plotly.com/javascript/) Library
-######Data Science (Analysis and Visualization)
 * **Map Animation** to show global surface climate change from 1961 to 2021.
-* **Bar Graph** to show ten most countries that suffer from temperature change.
+* **Bar Graph** to show ten most countries that suffer from temperature change mostly in the last ten years
 * **Bar Graph** to show ten countries that suffer from temperature change at the very least in the last ten years
-* Climate Change analusis
-* Line Graph to show trends
-* Another Chart to display same
+* **Line Chart** to show any remarkable trend between the years according to World, annex I countries and non-annex I countries
+* **Line Chart** to show any significant difference between seasons from 1961-2021
+* **Radar chart** to show trend of temperature change in the world from 1961-2021
 
-#### Application layout
+## Application layout
 ![](https://github.com/mwaseem75/iris-climate-change/blob/main/IRIS_ClimateChange.gif)
 
 ## Dataset
