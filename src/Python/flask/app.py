@@ -23,7 +23,11 @@ def index():
 #To View dataset countries data
 @app.route("/dscountries")
 def countries():
-    statement = iris.sql.exec("SELECT * FROM ClimateChange.Countries") 
+    try:
+        statement = iris.sql.exec("SELECT * FROM ClimateChange.Countries") 
+    except:
+        print("Error while reading country data")
+        return
     df = statement.dataframe()
     my_data=json.loads(df.to_json(orient="split"))["data"]
     my_cols=[{"title": str(col)} for col in json.loads(df.to_json(orient="split"))["columns"]]   

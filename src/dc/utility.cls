@@ -3,10 +3,7 @@ Class dc.utility
 
 ClassMethod ImportDS() As %String
 {
-    //Create table query
-    //SET qry = "CREATE TABLE dc.ClimateChange.Countries(CountryCode INT,Country VARCHAR(50),M49Code VARCHAR(3),ISO2Code VARCHAR(2),ISO3Code VARCHAR(3),StartYear INT,EndYear INT)"
-    
-    //Execute Query
+    //Dynamically create country table
     Do ..GetColTypes("/opt/irisapp/src/data/climatechange/FAOSTAT_data_11-24-2020.csv",.coltype)
     SET tableName= "dc.ClimateChange.Countries"
     SET qry = "CREATE TABLE "_tableName_" ("_coltype_")"
@@ -18,7 +15,7 @@ ClassMethod ImportDS() As %String
     }
     ELSE
     {
-    //Load DATA statement
+    //Load DATA to country table 
         SET qry = "LOAD DATA FROM FILE  '/opt/irisapp/src/data/climatechange/FAOSTAT_data_11-24-2020.csv' INTO dc.ClimateChange.Countries USING {""from"":{""file"":{""header"":""0"",""skip"":""1""}}}"
         SET rset = ##class(%SQL.Statement).%ExecDirect(,qry)
         IF rset.%SQLCODE
@@ -27,6 +24,7 @@ ClassMethod ImportDS() As %String
         } 
     }
 
+    //Dynamically create Climatechange data
     Do ..GetColTypes("/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv",.coltype)
     SET tableName= "dc.ClimateChange.Data"
     //SET coltype = "AreaCode NUMERIC(3,0), Area VARCHAR(100),MonthsCode NUMERIC(4,0),Months VARCHAR(20),ElementCode VARCHAR(4), Element VARCHAR(100), UNIT VARCHAR(3), Y1961 NUMERIC(7,3)"
