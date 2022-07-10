@@ -81,6 +81,9 @@ Examine the seasonal effects of climate change besides the yearly trend
 Examine the seasonal effects of climate change besides the yearly trend
 ![image](https://user-images.githubusercontent.com/18219467/177931438-dc30a289-aa0b-4dcd-a59f-a47749d2b3f4.png)
 
+## Conclusion
+We examined how global surface temperature change between 1961 and 2021. When examining the top ten areas that have the highest temperature change in the last decade are mostly industrialized countries. Additionally, We found that temperature increased every ten decades, and the last decade can count as the hottest decade. From our above analysis result, We came up winter season getting more hotter. Finally, We tried to show how temperature is increasing worldwide as a proof of global warming.  we analyzed deeper climate change effects in animation map; this shows how climate change gets serious year by year. 
+
 ## Other Information
 The idea of this applicaton is taken from [**Kaggle Climate Change**](https://www.kaggle.com/code/sevgisarac/climate-change/notebook) Project
 
