@@ -12,7 +12,7 @@ env:
   SERVICE:      irisclimatechange
   DOMAIN_NAME:  irisclimatechange.demo.community.intersystems.com
 # Leave this section untouched
-  PROJECT_ID:   irispyapps
+  PROJECT_ID:   iris-community-demos
   CLUSTER_NAME: demo
   GITHUB_SHA:   ${{ github.sha }}
   GCR_LOCATION: eu.gcr.io
