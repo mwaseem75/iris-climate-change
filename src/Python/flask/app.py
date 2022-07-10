@@ -51,12 +51,12 @@ def dsdata():
 def mosttemp():
     #Get DataFrame
     df = getDataFrame()
-        
+    #Create a copy of DataFrame    
     df_c =df.copy()
     df_c.set_index("year", inplace=True)
     df_c = df_c.loc[['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019']]
     df_c.reset_index(inplace = True)
-
+    #Group by country name
     df_c = df_c.groupby(
     ['country name',]
     ).agg(
@@ -66,8 +66,9 @@ def mosttemp():
         }
     )
     df_c.reset_index(inplace = True)
+    #applying sorting
     df_c = df_c.sort_values(by=['tem_change'],ascending=False).head(10)
-
+    #adding titles
     fig = px.bar(df_c, x="country name", y='tem_change' ,text='tem_change', 
     title="Top ten countries that have highest temperature change in the last decades"
            "<br>The top ten list shows Europe and some European countries. It also has been illustrated that Europe"
@@ -102,8 +103,9 @@ def mosttemp():
             title_font = {"size": 15},
             title_standoff = 0)
     fig.update_yaxes(showticklabels=False,tickmode="auto", title='Temperature Change',title_standoff = 0)
-
+    #Converting dataframe to JSON in order to display on web
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    #rendering main.html page by passing json object 
     return render_template("main.html", fig=graphJSON) 
 
 #Ten countries that suffer from temperature change at the very least in the last ten years       
@@ -411,12 +413,12 @@ def globaldata():
     return render_template("main.html", fig=graphJSON)
 
 def getDataFrame():
-    df= pd.read_csv("/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv", encoding='latin-1') # csv file is encoding as latin-1 type
+    df= pd.read_csv("/opt/irisapp/src/data/climatechange/Environment_Temperature_change_E_All_Data_NOFLAG.csv", encoding='latin-1') 
     #Get data from IRIS
     statement = iris.sql.exec('SELECT Country as "Country Name", ISO3Code as "Country Code" FROM ClimateChange.Countries') 
     df_countrycode = statement.dataframe()
     
-    #Renaming
+    #Renaming columns
     df.rename(columns = {'Area':'country name'},inplace = True)
     df.set_index('Months', inplace=True)
     df.rename({'Dec-Jan-Feb': 'Winter', 'Mar-Apr-May': 'Spring', 'Jun-Jul-Aug':'Summer','Sep-Oct-Nov':'Fall'}, axis='index',inplace = True)
