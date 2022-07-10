@@ -81,6 +81,9 @@ Examine the seasonal effects of climate change besides the yearly trend
 Examine the seasonal effects of climate change besides the yearly trend
 ![image](https://user-images.githubusercontent.com/18219467/177931438-dc30a289-aa0b-4dcd-a59f-a47749d2b3f4.png)
 
+##Conclusion
+
+
 ## Other Information
 The idea of this applicaton is taken from [**Kaggle Climate Change**](https://www.kaggle.com/code/sevgisarac/climate-change/notebook) Project
 
