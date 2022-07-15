@@ -1,4 +1,4 @@
-Class dc.utility
+Class dc.climatechange.utility
 {
 
 ClassMethod ImportDS() As %String
@@ -20,7 +20,7 @@ ClassMethod ImportDS() As %String
         SET rset = ##class(%SQL.Statement).%ExecDirect(,qry)
         IF rset.%SQLCODE
         {
-             WRITE rset.%Message,!  
+            WRITE rset.%Message,!  
         } 
     }
 

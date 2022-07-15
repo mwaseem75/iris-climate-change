@@ -9,7 +9,7 @@
       
     zn "USER" 
     zw $SYSTEM.OBJ.ImportDir("/opt/irisapp/src", "*.cls", "cubk", .tErrors, 1)
-    do ##class(dc.utility).ImportDS()
+    do ##class(dc.climatechange.utility).ImportDS()
     // Import DS
 
 
